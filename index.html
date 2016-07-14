@@ -1,0 +1,661 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Parlez-Vous Android?</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/serif.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+
+
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h2>Parlez-Vous Android?</h2>
+            <h4><i class="icon-android"></i> Formation avancée</h4>
+            <img data-src="images/android.gif">
+
+            <p>
+                <small>By <a href="http://excilys.com/" target="_blank">Excilys</a></small>
+            </p>
+        </section>
+        <section>
+            <h1>Sommaire</h1>
+            <ol>
+                <li class="fragment">Introduction</li>
+                <li class="fragment">Environnement</li>
+                <li class="fragment">L'Archytecture</li>
+                <li class="fragment">Les layouts</li>
+                <li class="fragment">Activity et vue</li>
+                <li class="fragment">Thread, réseau et web services</li>
+                <li class="fragment">Les listes</li>
+                <li class="fragment">Les images</li>
+            </ol>
+        </section>
+        <section>
+            <section>
+                <h1>Introduction</h1>
+            </section>
+            <section>
+                <h2>Les apps android d'Excilys</h2>
+                <ol>
+                    <li class="fragment">OSM contributor</li>
+                    <li class="fragment">SDK transilien</li>
+                    <li class="fragment">La Poste</li>
+                    <li class="fragment">Open cyclo</li>
+                    <li class="fragment">Event tribe</li>
+                    <li class="fragment">Capico</li>
+                    <li class="fragment">Glizzer</li>
+                </ol>
+                <img data-src="images/capture_genius.png" height="300px">
+                <img data-src="images/osm.png" height="300px">
+            </section>
+            <section>
+                <h3>Une idée des chiffres ?</h3>
+
+                <div class="fragment">
+                    <img data-src="images/devices.png" height="250px">
+                    <img data-src="images/os_market_share.png" height="250px">
+                </div>
+            </section>
+            <section>
+                <h3>Et pour les sous?</h3>
+
+                <div class="fragment">
+                    <img data-src="images/apps.png" height="300px">
+                    <img data-src="images/prices.jpg" height="250px">
+                </div>
+            </section>
+            <section>
+                <h3>L'objectif du cours</h3>
+                todo add images of the app
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Environnement</h1>
+            </section>
+            <section>
+                <h3>Les écrans</h3>
+
+                <div class="fragment">
+                    <img data-src="images/density.png" height="250px">
+                    <img data-src="images/screeensize.png" height="250px">
+                </div>
+            </section>
+            <section>
+                <h3>Les versions</h3>
+                <img class="fragment" data-src="images/versions.png" height="250px">
+                <img class="fragment" data-src="images/versions.jpg" height="250px">
+            </section>
+            <section>
+                <h3>Data et baterie</h3>
+                <img class="fragment" data-src="images/no_data.gif" height="250px">
+                <img class="fragment" data-src="images/no_battery.gif" height="250px">
+            </section>
+            <section>
+                <h3>Comment ca marche ?</h3>
+                <img data-src="images/android_linux.png" height="400px">
+            </section>
+            <section>
+                <h3>JVM vs DALVIK ?</h3>
+                <!--https://developer.android.com/studio/build/index.html-->
+                <img data-src="images/build-process.png" height="500px">
+            </section>
+            <section>
+                <h3>Next fight : ART vs DALVIK</h3>
+                <img data-src="images/art.png" height="500px">
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>L'Architecture</h1>
+            </section>
+            <section>
+                <h3>Création de votre première App</h3>
+                <ol>
+                    <li>Android Studio:
+                        <a href="http://developer.android.com/tools/sdk" target="_blank">http://developer.android.com/tools/sdk</a>
+                    </li>
+                    <li>La documentation officielle:
+                        <a href="http://developer.android.com" target="_blank">http://developer.android.com</a>
+                    </li>
+                </ol>
+                <img data-src="images/newProject.png" height="500px">
+                <img data-src="images/newProject2.png" height="500px">
+            </section>
+            <section>
+                <h3>Le manifest</h3>
+<pre style="width: 1200px;"><code>
+    <?xml version="1.0" encoding="utf-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+              package="com.nico.myapplication">
+
+        <uses-permission android:name="android.permission.INTERNET"/>
+
+        <application
+                android:allowBackup="true"
+                android:icon="@mipmap/ic_launcher"
+                android:label="@string/app_name"
+                android:supportsRtl="true"
+                android:theme="@style/AppTheme">
+
+            <activity android:name=".MainActivity">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN"/>
+
+                    <category android:name="android.intent.category.LAUNCHER"/>
+                </intent-filter>
+            </activity>
+
+            <receiver android:name="MyPhoneReceiver">
+                <intent-filter>
+                    <action android:name="android.intent.action.PHONE_STATE">
+                    </action>
+                </intent-filter>
+            </receiver>
+        </application>
+
+    </manifest>
+</code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Les Layouts</h1>
+            </section>
+            <section>
+                <h3>WYSIWYG</h3>
+                <img data-src="images/WYSIWYG.png" height="500px">
+            </section>
+            <section>
+                <h3>Linear layout</h3>
+                <img data-src="images/linear.png" height="600px">
+                <img data-src="images/linear_preview.png" height="600px">
+            </section>
+            <section>
+                <h3>Relative layout</h3>
+                <img data-src="images/relative.png" height="600px">
+                <img data-src="images/linear_preview.png" height="600px">
+            </section>
+            <section>
+                <h3>Les mots clés incontournables</h3>
+                <ul>
+                    <li class="fragment">Margin</li>
+                    <li class="fragment">Padding</li>
+                    <li class="fragment">layout_below / layout_above</li>
+                    <li class="fragment">layout_toEndOf / layout_toStartOf</li>
+                    <li class="fragment">layout_centerHorizontal / layout_centerVertical
+                    <li class="fragment">layout_centerInParent</li>
+                </ul>
+            </section>
+            <section data-background="#C8E6C9" data-background-transition="zoom">
+                <h3>A vous de jouer</h3>
+
+                <p class="small">Le but de cette exercice est de vous faire travailler avec les layouts pour
+                    obtenir une vue finale qui ressemble à la capture ci-contre, soit un formulaire avec 2 champs et des
+                    contrôles en bas de l'écran. Cet écran représente le formulaire de connexion de notre application.
+                </p>
+
+                <h4>Indications:</h4>
+
+                <div style="float:left; width: 500px; display: inline-block;">
+                    <p class="small">
+                        <b>TextView</b> permet d'afficher un texte<br/>
+                        <b>EditText</b> permet d'afficher un champ de saisie<br/>
+                        <b>ScrollView</b> permet d'avoir un contenu scrollable<br/>
+                        <b>Button</b> permet d'afficher un bouton<br/>
+                    </p>
+
+                    <p class="small">
+                        Une bonne façon de commencer est de mettre en place des layouts avec des couleurs de fond
+                        différentes pour s'assurer que tout est bien à sa place et réagit correctement au changement
+                        d'orientation.
+                    </p>
+
+                    <p class="small">
+                        Pour changer la couleur de fond d'un élément :
+                        <br/>
+                        android:background="#ttrrggbb"
+                        <br/>
+                        <br/>
+                        tt : alant de 00 à FF pour la transparence <br/>
+                    </p>
+                </div>
+                <img style="float:left;" data-src="images/help_exo1.png" height="400px">
+            </section>
+            <section data-background="#C8E6C9">
+                <h3>Bonus</h3>
+
+                <p class="small">Créez un nouveau projet et en utilisant simplement un RelativeLayout et des TextViews,
+                    essayez de
+                    reproduire l’exemple. Le résultat devrait être comme ci-contre.</p>
+                <img data-src="images/exo2-bonus.png" height="400px">
+
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Activity et vue</h1>
+            </section>
+            <section>
+                <h3>Ouvrir une activité</h3>
+                <img data-src="images/activity1.png" height="300px">
+<pre data-trim data-noescape>
+<code>
+    Intent intent = new Intent(this, DisplayMessagesActivity.class);
+    intent.putExtra(EXTRA_MESSAGE,
+    message);
+    startActivity(intent);
+</code></pre>
+            </section>
+            <section data-transition="fade">
+                <h3>Backstack</h3>
+                <img data-src="images/backstack1.png" height="500px">
+            </section>
+            <section data-transition="fade">
+                <h3>Backstack</h3>
+                <img data-src="images/backstack2.png" height="500px">
+            </section>
+            <section>
+                <h3>Life cycle</h3>
+                <img data-src="images/lifecycle.png" height="500px">
+            </section>
+            <section data-background="#C8E6C9" data-background-transition="zoom">
+                <h3>Cycle de vie d'une activity</h3>
+
+                <p class="small">
+                    Le but de cet exercice est de comprendre ce que devient une Activity lors de différents évènements.
+                    Pour cela, vous allez utiliser l’API de log d’Android.
+                </p>
+<pre data-trim data-noescape>
+<code>
+    Log.i(TAG, "onCreate!");
+
+</code></pre>
+                <p class="small">
+                    Une pratique courante est de déclarer une constante TAG dans la classe.
+                </p>
+<pre data-trim data-noescape>
+<code>
+    public class ParlezVousActivity extends Activity {
+    private final String TAG = ParlezVousActivity.class.getSimpleName();
+
+</code></pre>
+                <p class="small">
+                    Redéfinissez les méthodes suivantes et ajoutez-y un Log explicite :
+                    onCreate, onDestroy, onPause, onResume, onSaveInstanceState, onRestoreInstanceState
+
+                    Observez ce qui arrive lorsque :
+
+                    L’application se lance
+                    Vous changez l’orientation du téléphone (Ctrl+F11 sur l’émulateur)
+                    Vous fermez l’application
+                </p>
+            </section>
+            <section data-background="#C8E6C9" data-background-transition="zoom">
+                <h3>Interactions utilisateurs</h3>
+
+                <p class="small">
+                    Le but de cet exercice est d’écouter et de manipuler la vue depuis l’Activity. On poursuit avec
+                    notre application.
+
+                    Dans la méthode onCreate de l’Activity, récupérez les élements de la vue que vous allez manipuler en
+                    utilisant findViewById :</p>
+<pre data-trim data-noescape>
+<code>
+    Log.i(TAG, "onCreate!");
+    private EditText usernameField;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    usernameField = (EditText) findViewById(R.id.username_field);
+
+</code></pre>
+                <p class="small">
+                    Ajoutez un listener sur l’évènement onClick des boutons, qui peut être au choix : l’Activity, une
+                    classe
+                    anonyme, ou une classe externe.
+                    Implémentez le bouton "Vider" en supprimant le contenu des champs texte.
+                    Implémentez le bouton "Envoyer" en affichant un Toast.
+<pre data-trim data-noescape>
+<code>
+    Toast.makeText(this, "Toast !", Toast.LENGTH_SHORT).show();
+
+</code></pre>
+                </p>
+            </section>
+            <section data-background="#C8E6C9" data-background-transition="zoom">
+                <h3>Bonus</h3>
+
+                <p class="small">
+                    Ajoutez une phase de validation du formulaire au moment de l’envoi qui vérifiera que les champs ne
+                    soient pas vides. Pour cela, ajoutez dans une TextView ayant gone comme visibility. La méthode si
+                    dessous vous permettra de rendre visible ce message d’erreur.
+                </p>
+<pre data-trim data-noescape>
+<code>
+    setVisibility(View.VISIBLE);
+
+</code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Thread, Réseau, WebServices</h1>
+            </section>
+            <section>
+                <h3>UI-Thread</h3>
+                Seul l’UIThread peut modifier la vue.<br/>
+                C’est l’UIThread qui traite les actions utilisateurs.<br/>
+
+                Que se passe-t-il lorsqu’on effectue un chargement long sur ce thread?
+            </section>
+            <section>
+                <h3>Asynctask</h3>
+                <img data-src="images/AsyncTask.png" height="500px">
+            </section>
+            <section>
+                <h3>Comment on code ca ?</h3>
+                <pre data-trim data-noescape>
+<code>
+
+    private class DownloadFilesTask extends AsyncTask&lt;URL, Integer, Long&gt; {
+
+    protected Long doInBackground(URL... urls) {
+    int count = urls.length;
+    long totalSize = 0;
+    for (int i = 0; i < count; i++) {
+    totalSize += Downloader.downloadFile(urls[i]);
+    publishProgress((int) ((i / (float) count) * 100));
+    // Escape early if cancel() is called
+    if (isCancelled()) break;
+    }
+    return totalSize;
+    }
+
+    protected void onProgressUpdate(Integer... progress) {
+    setProgressPercent(progress[0]);
+    }
+
+    protected void onPostExecute(Long result) {
+    showDialog("Downloaded " + result + " bytes");
+    }
+    }
+
+</code></pre>
+                Lancer l'asynctask avec :
+<pre data-trim data-noescape>
+<code>
+    new DownloadFilesTask().execute(url1, url2, url3);
+
+</code></pre>
+            </section>
+            <section>
+                <h3>Les params</h3>
+                Les trois types de parametres utilisé par l'async task sont :
+
+                <b>Params</b>,le type envoyé lors de l'execution.<br/>
+                <b>Progress</b>, le typme envoyé lors de la progression.<br/>
+                <b>Result</b>, le type du resultat de l'asynctask.<br/><br/>
+                Les params ne sont pas toujours utilisé, vous pouvez utilisez Void dans ces cas.
+
+<pre data-trim data-noescape>
+<code>
+    private class MyTask extends AsyncTask&lt;Void, Void, Void&gt; { ... }
+
+</code></pre>
+            </section>
+            <section>
+                <h3>Appel réseau</h3>
+<pre data-trim data-noescape>
+<code>
+    URL url = new URL("http://www.android.com/");
+    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+    try {
+    InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+    readStream(in);
+    } finally {
+    urlConnection.disconnect();
+    }
+</code></pre>
+            </section>
+            <section data-background="#C8E6C9" data-background-transition="zoom">
+                <h3>On se connecte ?</h3>
+
+                <p class="small">
+                    Le but de cet exercice est d'envoyer un formulaire à un web service REST.<br/>
+
+                    La première chose à faire est d’ajouter l’autorisation à l’application pour utiliser internet. Pour
+                    cela, dans le fichier AndroidManifest.xml :
+
+                </p>
+<pre data-trim data-noescape>
+<code>
+    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+
+</code></pre>
+                <p class="small">
+                    Créez une classe loginTask qui étend android.os.AsyncTask.<br/>
+                    Dans la méthode onPreExecute, affichez une roue de chargement.<br/>
+                    Dans la méthode onPostExecute, rendez cette roue invisible.<br/>
+                    Dans la méthode doInBackground, récupérer le username et le password.<br/>
+                    Faites votre appel au web service dans la méthode doInBackground.<br/><br/>
+                    L'URL qui doit être appelée est :
+
+                    <br/><br/><a>http://training.loicortola.com/parlez-vous-android/register/[username]/[password]</a><br/><br/>
+
+                    La méthode HTTP à utiliser est GET<br/>
+                    La réponse à cette requête est la chaîne de caractères « true » si la combinaison username/password
+                    correspond à un utilisateur inscrit et "false" dans le cas contraire.
+                </p>
+            </section>
+            <section>
+                <h3>Appel réseau avec <a href="http://square.github.io/retrofit/" target="_blank">Retrofit</a></h3>
+<pre data-trim data-noescape>
+<code>
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+
+</code></pre>
+<pre data-trim data-noescape>
+<code>
+    public interface GitHubService {
+    @GET("users/{user}/repos")
+    Call&lt;List&lt;Repo&gt;&gt; listRepos(@Path("user") String user);
+    }
+
+</code></pre>
+<pre data-trim data-noescape>
+<code>
+    Retrofit retrofit = new Retrofit.Builder()
+    .baseUrl("https://api.github.com/")
+    .build();
+
+    GitHubService service = retrofit.create(GitHubService.class);
+
+</code></pre>
+<pre data-trim data-noescape>
+<code>
+    Call&lt;List&lt;Repo&gt;&gt; repos = service.listRepos("octocat");
+
+</code></pre>
+            </section>
+            <section data-background="#C8E6C9" data-background-transition="zoom">
+                <h3>La même en mieux ?</h3>
+                Il s'agit a present de refaire cette appel de login avec retrofit. Retirer l'async task et utiliser la
+                methode onResponse du callback.
+            </section>
+            <section>
+                RX ?
+                Les bout de code on deja les bonnes urls et tout ?
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Les listes</h1>
+            </section>
+            <section>
+                <h3>Les listes</h3>
+                <img data-src="images/RecyclerView.png">
+            </section>
+            <section>
+                <h3>Le RecyclerView</h3>
+<pre data-trim data-noescape>
+<code>
+    &lt;android.support.v7.widget.RecyclerView
+    android:id="@+id/my_recycler_view"
+    android:scrollbars="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/&gt;
+</code></pre>
+<pre data-trim data-noescape>
+<code>
+    // use this setting to improve performance if you know that changes
+    // in content do not change the layout size of the RecyclerView
+    mRecyclerView.setHasFixedSize(true);
+
+    // use a linear layout manager
+    mLayoutManager = new LinearLayoutManager(this);
+    mRecyclerView.setLayoutManager(mLayoutManager);
+
+    // specify an adapter
+    mAdapter = new MyAdapter(myDataset);
+    mRecyclerView.setAdapter(mAdapter);
+</code></pre>
+            </section>
+            <section>
+                <h3>L'adapter</h3>
+<pre data-trim data-noescape>
+<code>
+    public class MyAdapter extends RecyclerView.Adapter&lt;MyAdapter.ViewHolder&gt; {
+    private String[] dataset;
+
+    // Provide a reference to the views for each data item
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public TextView textView;
+    public ViewHolder(View v) {
+    super(v);
+    textView = vfindViewById(R.id.mytv);
+    }
+    }
+
+    // Provide a suitable constructor (depends on the kind of dataset)
+    public MyAdapter(String[] dataset) {
+    this.dataset = dataset;
+    }
+
+    // Create new views (invoked by the layout manager)
+    @Override
+    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    int viewType) {
+    // create a new view
+    View v = LayoutInflater.from(parent.getContext())
+    .inflate(R.layout.my_text_view, parent, false);
+    return new ViewHolder(v);
+    }
+
+    // Replace the contents of a view (invoked by the layout manager)
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+    // - get element from your dataset at this position
+    // - replace the contents of the view with that element
+    holder.mTextView.setText(mDataset[position]);
+
+    }
+
+    // Return the size of your dataset (invoked by the layout manager)
+    @Override
+    public int getItemCount() {
+    return mDataset.length;
+    }
+    }
+</code></pre>
+            </section>
+            <section data-background="#C8E6C9" data-background-transition="zoom">
+                <h3>Recupérer les messages</h3>
+            </section>
+            <section data-background="#C8E6C9">
+                <h3>Infinite scroll</h3>
+
+                <p class="small">Implementez un infinite scroll pour charger les messages.</p>
+                <img src="images/infinitescroll.png" height="300px">
+<pre data-trim data-noescape>
+<code>
+    public abstract class EndlessRecyclerViewScrollListener extends RecyclerView.OnScrollListener
+
+</code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Les images</h1>
+            </section>
+            <section>
+                <h3>
+                <a href="http://square.github.io/picasso/" target="_blank">Picasso</a>
+                <a href="https://github.com/bumptech/glide" target="_blank">Glide</a></h3>
+                <pre data-trim data-noescape>
+<code>
+    repositories {
+    mavenCentral() // jcenter() works as well because it pulls from Maven Central
+    }
+
+    dependencies {
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:support-v4:19.1.0'
+    }
+
+</code></pre>
+<pre data-trim data-noescape>
+<code>
+    Glide.with(this).load("http://goo.gl/gEgYUd").into(imageView);
+
+</code></pre>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+			Reveal.initialize({
+				history: true,
+
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+
+
+
+
+
+</script>
+</body>
+</html>
