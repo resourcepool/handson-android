@@ -23,6 +23,9 @@
 
 
 
+
+
+
     </script>
 </head>
 <body>
@@ -144,38 +147,7 @@
             </section>
             <section>
                 <h3>Le manifest</h3>
-<pre style="width: 1200px;"><code>
-    <?xml version="1.0" encoding="utf-8"?>
-    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-              package="com.nico.myapplication">
-
-        <uses-permission android:name="android.permission.INTERNET"/>
-
-        <application
-                android:allowBackup="true"
-                android:icon="@mipmap/ic_launcher"
-                android:label="@string/app_name"
-                android:supportsRtl="true"
-                android:theme="@style/AppTheme">
-
-            <activity android:name=".MainActivity">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN"/>
-
-                    <category android:name="android.intent.category.LAUNCHER"/>
-                </intent-filter>
-            </activity>
-
-            <receiver android:name="MyPhoneReceiver">
-                <intent-filter>
-                    <action android:name="android.intent.action.PHONE_STATE">
-                    </action>
-                </intent-filter>
-            </receiver>
-        </application>
-
-    </manifest>
-</code></pre>
+                <script src="https://gist.github.com/nicolasfavier/5dab0743ba4a05e8a2447cac8bccda18.js"></script>
             </section>
         </section>
         <section>
@@ -358,6 +330,19 @@
     setVisibility(View.VISIBLE);
 
 </code></pre>
+            </section>
+            <section>
+                <h3>Let's do it clean</h3>
+
+                <p>
+                    Loading views like this and using listeners for click events archaiq and quite a pain.
+                    There is a cool librairie developed by Jake Wharton that you should use.
+                </p>
+
+                <h4>
+                    <a href="http://jakewharton.github.io/butterknife/" target="_blank">Butter Knife</a>
+                </h4>
+                <img data-src="images/butterknife.png" height="200px">
             </section>
         </section>
         <section>
@@ -612,8 +597,8 @@
             </section>
             <section>
                 <h3>
-                <a href="http://square.github.io/picasso/" target="_blank">Picasso</a>
-                <a href="https://github.com/bumptech/glide" target="_blank">Glide</a></h3>
+                    <a href="http://square.github.io/picasso/" target="_blank">Picasso</a>
+                    <a href="https://github.com/bumptech/glide" target="_blank">Glide</a></h3>
                 <pre data-trim data-noescape>
 <code>
     repositories {
@@ -651,6 +636,9 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+
+
+
 
 
 
