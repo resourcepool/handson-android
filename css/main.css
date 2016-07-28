@@ -3,3 +3,5 @@ p.small {
     text-align: left;
     line-height: 25px;
 }
+
+.gist-data {max-height: 600px;}

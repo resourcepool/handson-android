@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Parlez-Vous Android?</title>
+    <title>Android hands-on</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/serif.css">
@@ -26,14 +26,22 @@
 
 
 
+
+
+
+
+
+
+
+
     </script>
 </head>
 <body>
 <div class="reveal">
-    <div class="slides">
+    <section class="slides">
         <section>
-            <h2>Parlez-Vous Android?</h2>
-            <h4><i class="icon-android"></i> Formation avancée</h4>
+            <h2>Android hands-on</h2>
+            <h4><i class="icon-android"></i>advanced learning</h4>
             <img data-src="images/android.gif">
 
             <p>
@@ -41,16 +49,16 @@
             </p>
         </section>
         <section>
-            <h1>Sommaire</h1>
+            <h1>Table of content</h1>
             <ol>
                 <li class="fragment">Introduction</li>
-                <li class="fragment">Environnement</li>
-                <li class="fragment">L'Archytecture</li>
-                <li class="fragment">Les layouts</li>
-                <li class="fragment">Activity et vue</li>
-                <li class="fragment">Thread, réseau et web services</li>
-                <li class="fragment">Les listes</li>
-                <li class="fragment">Les images</li>
+                <li class="fragment">Environment</li>
+                <li class="fragment">Architecture</li>
+                <li class="fragment">Layouts</li>
+                <li class="fragment">Views and Activities</li>
+                <li class="fragment">Thread and web services</li>
+                <li class="fragment">Lists</li>
+                <li class="fragment">Images</li>
             </ol>
         </section>
         <section>
@@ -58,7 +66,7 @@
                 <h1>Introduction</h1>
             </section>
             <section>
-                <h2>Les apps android d'Excilys</h2>
+                <h2>Excilys' Android applications</h2>
                 <ol>
                     <li class="fragment">OSM contributor</li>
                     <li class="fragment">SDK transilien</li>
@@ -66,13 +74,13 @@
                     <li class="fragment">Open cyclo</li>
                     <li class="fragment">Event tribe</li>
                     <li class="fragment">Capico</li>
-                    <li class="fragment">Glizzer</li>
+                    <li class="fragment">Glazer</li>
                 </ol>
                 <img data-src="images/capture_genius.png" height="300px">
                 <img data-src="images/osm.png" height="300px">
             </section>
             <section>
-                <h3>Une idée des chiffres ?</h3>
+                <h3>Any ideas of the numbers?</h3>
 
                 <div class="fragment">
                     <img data-src="images/devices.png" height="250px">
@@ -80,7 +88,7 @@
                 </div>
             </section>
             <section>
-                <h3>Et pour les sous?</h3>
+                <h3>Let's talk about money!</h3>
 
                 <div class="fragment">
                     <img data-src="images/apps.png" height="300px">
@@ -88,16 +96,16 @@
                 </div>
             </section>
             <section>
-                <h3>L'objectif du cours</h3>
-                todo add images of the app
+                <h3>Lesson objectives</h3>
+                //todo add images of the app
             </section>
         </section>
         <section>
             <section>
-                <h1>Environnement</h1>
+                <h1>Environment</h1>
             </section>
             <section>
-                <h3>Les écrans</h3>
+                <h3>Screens</h3>
 
                 <div class="fragment">
                     <img data-src="images/density.png" height="250px">
@@ -105,17 +113,17 @@
                 </div>
             </section>
             <section>
-                <h3>Les versions</h3>
+                <h3>Versions</h3>
                 <img class="fragment" data-src="images/versions.png" height="250px">
                 <img class="fragment" data-src="images/versions.jpg" height="250px">
             </section>
             <section>
-                <h3>Data et baterie</h3>
+                <h3>Network and energy</h3>
                 <img class="fragment" data-src="images/no_data.gif" height="250px">
                 <img class="fragment" data-src="images/no_battery.gif" height="250px">
             </section>
             <section>
-                <h3>Comment ca marche ?</h3>
+                <h3>How does it work?</h3>
                 <img data-src="images/android_linux.png" height="400px">
             </section>
             <section>
@@ -130,15 +138,15 @@
         </section>
         <section>
             <section>
-                <h1>L'Architecture</h1>
+                <h1>Architecture</h1>
             </section>
             <section>
-                <h3>Création de votre première App</h3>
+                <h3>Go Android, build my app!</h3>
                 <ol>
                     <li>Android Studio:
                         <a href="http://developer.android.com/tools/sdk" target="_blank">http://developer.android.com/tools/sdk</a>
                     </li>
-                    <li>La documentation officielle:
+                    <li>Official documentation:
                         <a href="http://developer.android.com" target="_blank">http://developer.android.com</a>
                     </li>
                 </ol>
@@ -146,13 +154,17 @@
                 <img data-src="images/newProject2.png" height="500px">
             </section>
             <section>
-                <h3>Le manifest</h3>
+                <h3>Project structure</h3>
+                <img data-src="images/archi.png" height="600px">
+            </section>
+            <section>
+                <h3>The manifest</h3>
                 <script src="https://gist.github.com/nicolasfavier/5dab0743ba4a05e8a2447cac8bccda18.js"></script>
             </section>
         </section>
         <section>
             <section>
-                <h1>Les Layouts</h1>
+                <h1>Layouts</h1>
             </section>
             <section>
                 <h3>WYSIWYG</h3>
@@ -169,7 +181,7 @@
                 <img data-src="images/linear_preview.png" height="600px">
             </section>
             <section>
-                <h3>Les mots clés incontournables</h3>
+                <h3>Unavoidable keywords</h3>
                 <ul>
                     <li class="fragment">Margin</li>
                     <li class="fragment">Padding</li>
@@ -180,31 +192,30 @@
                 </ul>
             </section>
             <section data-background="#C8E6C9" data-background-transition="zoom">
-                <h3>A vous de jouer</h3>
+                <h3>Lets play</h3>
 
-                <p class="small">Le but de cette exercice est de vous faire travailler avec les layouts pour
-                    obtenir une vue finale qui ressemble à la capture ci-contre, soit un formulaire avec 2 champs et des
-                    contrôles en bas de l'écran. Cet écran représente le formulaire de connexion de notre application.
+                <p class="small">The gaol of this exercise is to build the login page. The first step is to create the
+                    view.
+                    View are generated with layouts, try to use the to reach the following screen. The view contains
+                    two edit text, an header and a validation button.
                 </p>
 
-                <h4>Indications:</h4>
+                <h4>Toolbox:</h4>
 
                 <div style="float:left; width: 500px; display: inline-block;">
                     <p class="small">
-                        <b>TextView</b> permet d'afficher un texte<br/>
-                        <b>EditText</b> permet d'afficher un champ de saisie<br/>
-                        <b>ScrollView</b> permet d'avoir un contenu scrollable<br/>
-                        <b>Button</b> permet d'afficher un bouton<br/>
+                        <b>TextView</b> to display a simple text<br/>
+                        <b>EditText</b> allows the user to write a text<br/>
+                        <b>ScrollView</b> to scroll the contents<br/>
+                        <b>Button</b> guess what, a button<br/>
                     </p>
 
                     <p class="small">
-                        Une bonne façon de commencer est de mettre en place des layouts avec des couleurs de fond
-                        différentes pour s'assurer que tout est bien à sa place et réagit correctement au changement
-                        d'orientation.
+                        The best way to start with layout is to add background color to layouts, it will help you
+                        with margin, padding... To do so use :
                     </p>
 
                     <p class="small">
-                        Pour changer la couleur de fond d'un élément :
                         <br/>
                         android:background="#ttrrggbb"
                         <br/>
@@ -217,19 +228,17 @@
             <section data-background="#C8E6C9">
                 <h3>Bonus</h3>
 
-                <p class="small">Créez un nouveau projet et en utilisant simplement un RelativeLayout et des TextViews,
-                    essayez de
-                    reproduire l’exemple. Le résultat devrait être comme ci-contre.</p>
+                <p class="small">From the menu in the login page, open a new activity. In this new Activity try to
+                    reproduce the following image</p>
                 <img data-src="images/exo2-bonus.png" height="400px">
-
             </section>
         </section>
         <section>
             <section>
-                <h1>Activity et vue</h1>
+                <h1>Views and activities</h1>
             </section>
             <section>
-                <h3>Ouvrir une activité</h3>
+                <h3>Start an Activity</h3>
                 <img data-src="images/activity1.png" height="300px">
 <pre data-trim data-noescape>
 <code>
@@ -255,8 +264,8 @@
                 <h3>Cycle de vie d'une activity</h3>
 
                 <p class="small">
-                    Le but de cet exercice est de comprendre ce que devient une Activity lors de différents évènements.
-                    Pour cela, vous allez utiliser l’API de log d’Android.
+                    The objective of this exercise is to understand the states of the activity. We are going to use
+                    Android API to log those events.
                 </p>
 <pre data-trim data-noescape>
 <code>
@@ -264,7 +273,7 @@
 
 </code></pre>
                 <p class="small">
-                    Une pratique courante est de déclarer une constante TAG dans la classe.
+                    A common practice is to add a TAG to the class for all logs.
                 </p>
 <pre data-trim data-noescape>
 <code>
@@ -273,25 +282,26 @@
 
 </code></pre>
                 <p class="small">
-                    Redéfinissez les méthodes suivantes et ajoutez-y un Log explicite :
+                    Overide the following methods and add some explicits logs :
                     onCreate, onDestroy, onPause, onResume, onSaveInstanceState, onRestoreInstanceState
+                    <br/>
+                    What happens when:
 
-                    Observez ce qui arrive lorsque :
-
-                    L’application se lance
-                    Vous changez l’orientation du téléphone (Ctrl+F11 sur l’émulateur)
-                    Vous fermez l’application
+                    You start an the application
+                    You receive a call
+                    You change your phone orientation (Ctrl+F11 for the emulator)
+                    You close the app
                 </p>
             </section>
             <section data-background="#C8E6C9" data-background-transition="zoom">
-                <h3>Interactions utilisateurs</h3>
+                <h3>User interactions</h3>
 
                 <p class="small">
-                    Le but de cet exercice est d’écouter et de manipuler la vue depuis l’Activity. On poursuit avec
-                    notre application.
+                    It's now time to listen and handle the view from the activity. We are going to add some behavior in
+                    our login page.
 
-                    Dans la méthode onCreate de l’Activity, récupérez les élements de la vue que vous allez manipuler en
-                    utilisant findViewById :</p>
+                    In the onCreate method of the activity, recover the objects of the view you want to manipulate.
+                    Use the findViewById() method:</p>
 <pre data-trim data-noescape>
 <code>
     Log.i(TAG, "onCreate!");
@@ -305,11 +315,8 @@
 
 </code></pre>
                 <p class="small">
-                    Ajoutez un listener sur l’évènement onClick des boutons, qui peut être au choix : l’Activity, une
-                    classe
-                    anonyme, ou une classe externe.
-                    Implémentez le bouton "Vider" en supprimant le contenu des champs texte.
-                    Implémentez le bouton "Envoyer" en affichant un Toast.
+                    Add a listener on the buttons, it can either be in our outside of the class.
+                    Implement the "Clear" button and the "Send" button, when the send button is clicked show a toast.
 <pre data-trim data-noescape>
 <code>
     Toast.makeText(this, "Toast !", Toast.LENGTH_SHORT).show();
@@ -321,98 +328,64 @@
                 <h3>Bonus</h3>
 
                 <p class="small">
-                    Ajoutez une phase de validation du formulaire au moment de l’envoi qui vérifiera que les champs ne
-                    soient pas vides. Pour cela, ajoutez dans une TextView ayant gone comme visibility. La méthode si
-                    dessous vous permettra de rendre visible ce message d’erreur.
+                    Add some validation on the fly or at the button click. Check that the fields aren't empty and the
+                    password is at least 3 characters.
+                    To display the error, use a classic TextView and chage its visibility.
                 </p>
 <pre data-trim data-noescape>
 <code>
     setVisibility(View.VISIBLE);
 
 </code></pre>
-            </section>
-            <section>
-                <h3>Let's do it clean</h3>
+                <br/>
 
-                <p>
-                    Loading views like this and using listeners for click events archaiq and quite a pain.
-                    There is a cool librairie developed by Jake Wharton that you should use.
+                <p class="small">
+                    If you still have time you can start to use <a href="#/butterknife">Butter Knife</a>, a cool way to
+                    load
+                    view and catch user interactions.
                 </p>
-
-                <h4>
-                    <a href="http://jakewharton.github.io/butterknife/" target="_blank">Butter Knife</a>
-                </h4>
-                <img data-src="images/butterknife.png" height="200px">
             </section>
         </section>
         <section>
             <section>
-                <h1>Thread, Réseau, WebServices</h1>
+                <h1>Thread and web services</h1>
             </section>
             <section>
                 <h3>UI-Thread</h3>
-                Seul l’UIThread peut modifier la vue.<br/>
-                C’est l’UIThread qui traite les actions utilisateurs.<br/>
+                Only one thread can modify the view. It's the Ui thread<br/>
+                This thread is also responsible for all client interaction with the app.<br/>
 
-                Que se passe-t-il lorsqu’on effectue un chargement long sur ce thread?
+                What happens if you do evy jobs in this thread ?
+                <img class="fragment" data-src="images/lag.gif" height="300px">
             </section>
             <section>
                 <h3>Asynctask</h3>
                 <img data-src="images/AsyncTask.png" height="500px">
             </section>
             <section>
-                <h3>Comment on code ca ?</h3>
-                <pre data-trim data-noescape>
-<code>
-
-    private class DownloadFilesTask extends AsyncTask&lt;URL, Integer, Long&gt; {
-
-    protected Long doInBackground(URL... urls) {
-    int count = urls.length;
-    long totalSize = 0;
-    for (int i = 0; i < count; i++) {
-    totalSize += Downloader.downloadFile(urls[i]);
-    publishProgress((int) ((i / (float) count) * 100));
-    // Escape early if cancel() is called
-    if (isCancelled()) break;
-    }
-    return totalSize;
-    }
-
-    protected void onProgressUpdate(Integer... progress) {
-    setProgressPercent(progress[0]);
-    }
-
-    protected void onPostExecute(Long result) {
-    showDialog("Downloaded " + result + " bytes");
-    }
-    }
-
-</code></pre>
+                <h3>How does it work?</h3>
+                <script src="https://gist.github.com/nicolasfavier/ae899c29908585baa7738c68fc4221ee.js"></script>
                 Lancer l'asynctask avec :
+                <script src="https://gist.github.com/nicolasfavier/1ddd5f67b116490124898285146fe3c9.js"></script>
+                <br/>
+            </section>
+            <section>
+                <h3>AsyncTask params</h3>
+                The three kind of params used by the asyncTask are:
+
+                <b>Params</b>,the type send at the execution.<br/>
+                <b>Progress</b>, the type send to the progress.<br/>
+                <b>Result</b>, the type sent at the end of the asynctask.<br/><br/>
+                Params are not always used, if so you can change it by Void.
+
 <pre data-trim data-noescape>
 <code>
-    new DownloadFilesTask().execute(url1, url2, url3);
+    private class LoginTask extends AsyncTask&lt;Void, Void, Void&gt; { ... }
 
 </code></pre>
             </section>
             <section>
-                <h3>Les params</h3>
-                Les trois types de parametres utilisé par l'async task sont :
-
-                <b>Params</b>,le type envoyé lors de l'execution.<br/>
-                <b>Progress</b>, le typme envoyé lors de la progression.<br/>
-                <b>Result</b>, le type du resultat de l'asynctask.<br/><br/>
-                Les params ne sont pas toujours utilisé, vous pouvez utilisez Void dans ces cas.
-
-<pre data-trim data-noescape>
-<code>
-    private class MyTask extends AsyncTask&lt;Void, Void, Void&gt; { ... }
-
-</code></pre>
-            </section>
-            <section>
-                <h3>Appel réseau</h3>
+                <h3>Network call</h3>
 <pre data-trim data-noescape>
 <code>
     URL url = new URL("http://www.android.com/");
@@ -426,169 +399,104 @@
 </code></pre>
             </section>
             <section data-background="#C8E6C9" data-background-transition="zoom">
-                <h3>On se connecte ?</h3>
+                <h3>Login on the server</h3>
 
                 <p class="small">
-                    Le but de cet exercice est d'envoyer un formulaire à un web service REST.<br/>
-
-                    La première chose à faire est d’ajouter l’autorisation à l’application pour utiliser internet. Pour
-                    cela, dans le fichier AndroidManifest.xml :
+                    The objective of the exercise is to send our previous form to a REST web service.<br/>
+                    First thing first, we need to add the internet permission.
+                    Do you remember where ?
+                    <span class="fragment">AndroidManifest.xml</span>
 
                 </p>
-<pre data-trim data-noescape>
+<pre data-trim data-noescape class="fragment">
 <code>
     &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
 
 </code></pre>
-                <p class="small">
-                    Créez une classe loginTask qui étend android.os.AsyncTask.<br/>
-                    Dans la méthode onPreExecute, affichez une roue de chargement.<br/>
-                    Dans la méthode onPostExecute, rendez cette roue invisible.<br/>
-                    Dans la méthode doInBackground, récupérer le username et le password.<br/>
-                    Faites votre appel au web service dans la méthode doInBackground.<br/><br/>
+                <p class="small fragment">
+                    Create the LoginTask that extends android.os.AsyncTask.<br/>
+                    In the onPreExecute method, display a loading wheel.<br/>
+                    In the onPostExecute method, hide the loading wheel.<br/>
+                    In the doInBackground method, execute your network call<br/>
                     L'URL qui doit être appelée est :
 
                     <br/><br/><a>http://training.loicortola.com/parlez-vous-android/register/[username]/[password]</a><br/><br/>
 
-                    La méthode HTTP à utiliser est GET<br/>
-                    La réponse à cette requête est la chaîne de caractères « true » si la combinaison username/password
-                    correspond à un utilisateur inscrit et "false" dans le cas contraire.
+                    The HTTP method to use is: GET<br/><br/>
+
+                    Status <span style="color: #4CAF50;">200-OK</span> JSON response {"status":200,"message":"Login
+                    successful"} if everything went well.<br/><br/>
+                    Status <span style="color: #F44336;">401-UNAUTHORIZED</span> JSON response
+                    {"status":401,"message":"...","elements":"..."} if login or/and password provided are not correct
                 </p>
-            </section>
-            <section>
-                <h3>Appel réseau avec <a href="http://square.github.io/retrofit/" target="_blank">Retrofit</a></h3>
-<pre data-trim data-noescape>
-<code>
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-
-</code></pre>
-<pre data-trim data-noescape>
-<code>
-    public interface GitHubService {
-    @GET("users/{user}/repos")
-    Call&lt;List&lt;Repo&gt;&gt; listRepos(@Path("user") String user);
-    }
-
-</code></pre>
-<pre data-trim data-noescape>
-<code>
-    Retrofit retrofit = new Retrofit.Builder()
-    .baseUrl("https://api.github.com/")
-    .build();
-
-    GitHubService service = retrofit.create(GitHubService.class);
-
-</code></pre>
-<pre data-trim data-noescape>
-<code>
-    Call&lt;List&lt;Repo&gt;&gt; repos = service.listRepos("octocat");
-
-</code></pre>
-            </section>
-            <section data-background="#C8E6C9" data-background-transition="zoom">
-                <h3>La même en mieux ?</h3>
-                Il s'agit a present de refaire cette appel de login avec retrofit. Retirer l'async task et utiliser la
-                methode onResponse du callback.
-            </section>
-            <section>
-                RX ?
-                Les bout de code on deja les bonnes urls et tout ?
             </section>
         </section>
         <section>
             <section>
-                <h1>Les listes</h1>
+                <h1>Lists</h1>
             </section>
             <section>
-                <h3>Les listes</h3>
-                <img data-src="images/RecyclerView.png">
+                <h3>Lists</h3>
+
+                <p class="fragment">How would you build a list ?</p>
+
+                <p class="fragment">What happens if you have more than 4000 elements ?</p>
+
+                <p class="fragment">So how is it done ?</p>
+                <img class="fragment" data-src="images/RecyclerView.png">
+            </section>
+            <section>
+                <h3>ListView</h3>
+                ListView is a view group that displays a scrollable list of items. The list items are automatically
+                inserted to the list using an Adapter that pulls content from a source such as an array and converts
+                each item result into a view that's placed into the list.
+                <script src="https://gist.github.com/nicolasfavier/c1e70b55e78a0235192d9a58754d7eee.js"></script>
+            </section>
+            <section>
+                <h3>Single element</h3>
+                Now that we have a container we need to add elements in it,
+                So we create a new xml for the view of a single element.<br/>
+                Create an xml : element_message.xml with tow TextView, one for the message, and an other one for the
+                author.
+            </section>
+            <section>
+                <h3>Base adapter</h3>
+                <script src="https://gist.github.com/nicolasfavier/f1bef26b7fbfd76b1594f47971620574.js"></script>
+            </section>
+            <section>
+                <h3>Lets merge it</h3>
+                <script src="https://gist.github.com/nicolasfavier/e12e4a35c371161f2c1c8c6758e41e1d.js"></script>
+            </section>
+            <section>
+                <h3>LitView vs RecyclerView</h3>
+                <img data-src="images/fight.gif">
+            </section>
+            <section>
+                <h3>The RecyclerView</h3>
+                <ul>
+                    <li>View holders</li>
+                    <li>Layout Manager</li>
+                    <li>Item Animator</li>
+                    <li>Item Decoration</li>
+                </ul>
             </section>
             <section>
                 <h3>Le RecyclerView</h3>
-<pre data-trim data-noescape>
-<code>
-    &lt;android.support.v7.widget.RecyclerView
-    android:id="@+id/my_recycler_view"
-    android:scrollbars="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"/&gt;
-</code></pre>
-<pre data-trim data-noescape>
-<code>
-    // use this setting to improve performance if you know that changes
-    // in content do not change the layout size of the RecyclerView
-    mRecyclerView.setHasFixedSize(true);
-
-    // use a linear layout manager
-    mLayoutManager = new LinearLayoutManager(this);
-    mRecyclerView.setLayoutManager(mLayoutManager);
-
-    // specify an adapter
-    mAdapter = new MyAdapter(myDataset);
-    mRecyclerView.setAdapter(mAdapter);
-</code></pre>
+                <script src="https://gist.github.com/nicolasfavier/f700a5418337e2cce68501fa31dba7dd.js"></script>
+                <script src="https://gist.github.com/nicolasfavier/f65d2d4f32d5c132ced4fb86d20d0520.js"></script>
             </section>
             <section>
                 <h3>L'adapter</h3>
-<pre data-trim data-noescape>
-<code>
-    public class MyAdapter extends RecyclerView.Adapter&lt;MyAdapter.ViewHolder&gt; {
-    private String[] dataset;
-
-    // Provide a reference to the views for each data item
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-    public TextView textView;
-    public ViewHolder(View v) {
-    super(v);
-    textView = vfindViewById(R.id.mytv);
-    }
-    }
-
-    // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(String[] dataset) {
-    this.dataset = dataset;
-    }
-
-    // Create new views (invoked by the layout manager)
-    @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-    int viewType) {
-    // create a new view
-    View v = LayoutInflater.from(parent.getContext())
-    .inflate(R.layout.my_text_view, parent, false);
-    return new ViewHolder(v);
-    }
-
-    // Replace the contents of a view (invoked by the layout manager)
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-    // - get element from your dataset at this position
-    // - replace the contents of the view with that element
-    holder.mTextView.setText(mDataset[position]);
-
-    }
-
-    // Return the size of your dataset (invoked by the layout manager)
-    @Override
-    public int getItemCount() {
-    return mDataset.length;
-    }
-    }
-</code></pre>
+                <script src="https://gist.github.com/nicolasfavier/944e7a60f062dc7adc452c8d8514bdc5.js"></script>
             </section>
             <section data-background="#C8E6C9" data-background-transition="zoom">
-                <h3>Recupérer les messages</h3>
+                <h3>Retrieve messages</h3>
             </section>
             <section data-background="#C8E6C9">
                 <h3>Infinite scroll</h3>
-
-                <p class="small">Implementez un infinite scroll pour charger les messages.</p>
+                <img src="images/buz.jpg" height="300px">
                 <img src="images/infinitescroll.png" height="300px">
-<pre data-trim data-noescape>
-<code>
-    public abstract class EndlessRecyclerViewScrollListener extends RecyclerView.OnScrollListener
-
-</code></pre>
+                <script src="https://gist.github.com/nicolasfavier/17f6b8ae4e3bdf9505d63e1eb56303c5.js"></script>
             </section>
         </section>
         <section>
@@ -618,7 +526,120 @@
 </code></pre>
             </section>
         </section>
-    </div>
+        <section>
+            <section>
+                <h1>Give me more</h1>
+                <img data-src="images/moreandroid.jpg" height="300px">
+            </section>
+            <section id="butterknife">
+                <h3>Let's do it clean</h3>
+
+                <p>
+                    Loading views like this and using listeners for click events archaic and quite a pain.
+                    There is a cool librairie developed by Jake Wharton that you should use.
+                </p>
+
+                <h4>
+                    <a href="http://jakewharton.github.io/butterknife/" target="_blank">Butter Knife</a>
+                </h4>
+                <img data-src="images/butterknife.png" height="200px">
+            </section>
+            <section>
+                <h3>ButterKnife</h3>
+                <h4>build.gradle</h4>
+                <script src="https://gist.github.com/nicolasfavier/46c6df6344816f76aa937dbe1ed5fde6.js"></script>
+                <h4>Activity.java</h4>
+                <script src="https://gist.github.com/nicolasfavier/6bc41f83e8ede4b7f9805d29f3050a4e.js"></script>
+            </section>
+            <section>
+                <h3>Networks call can be sexy</h3>
+                What problems did we encounter with classic calls ?
+                <ul>
+                    <li class="fragment">Threads</li>
+                    <li class="fragment">Parsing</li>
+                    <li class="fragment">Response status</li>
+                </ul>
+                <br/>
+            </section>
+            <section>
+                <h3><a href="http://square.github.io/retrofit/" target="_blank">Retrofit</a></h3>
+                <script src="https://gist.github.com/nicolasfavier/eab594d9b1ae72e9c705c3a3380c95d4.js"></script>
+                <script src="https://gist.github.com/nicolasfavier/5c5af3047c58ced4ea51d99077f8e2fd.js"></script>
+                <script src="https://gist.github.com/nicolasfavier/654a2b63421fe7a6f7af135bcee378c6.js"></script>
+            </section>
+            <section>
+                RX ?
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Cross platforms</h1>
+            </section>
+            <section>
+                <h3>Phonegap / Cordova</h3>
+
+                <p>
+                    PhoneGap is a distribution of Apache Cordova. You can think of Apache Cordova as the engine that
+                    powers PhoneGap.
+                </p>
+                <img data-src="images/phonegap_cordova.jpg" height="200px">
+
+                <p>It privides mobile apps with HTML, CSS & JS, target multiple platforms with one code base, Free and
+                    open
+                    source</p>
+            </section>
+            <section>
+                <h3>Titanium</h3>
+
+                <p>
+                    Titanium is not an attempt at “write once, run everywhere”.
+                    <br/>
+                    There is a core of mobile development APIs which can be normalized across platforms. These areas
+                    should be targeted for code reuse.
+                    <br/>
+                    There are platform-specific APIs, UI conventions, and features which developers should incorporate
+                    when developing for that platform.
+                </p>
+                <img data-src="images/titanium.png" height="200px">
+            </section>
+            <section>
+                <h3>Xamarin</h3>
+
+                <p>
+                    Build native apps for multiple platforms on a shared C# codebase and add native code.
+                </p>
+                <img data-src="images/xamarin.png" height="200px">
+            </section>
+            <section>
+                <h3>Pros</h3>
+                <ul>
+                    <li><b>Speed:</b> faster to develop, “write once, run everywhere” (unless, the application requires
+                        a lot of
+                        customization for each platform)
+                    </li>
+                    <li><b>Simplicity:</b> Updates to your cross-platform app would, naturally, be instantly synced
+                        across all platforms and
+                        devices.
+                    </li>
+                </ul>
+                <br/>
+
+                <h3>Cons</h3>
+                <ul>
+                    <li><b>Platform limitations:</b> Each platform has its own unique style and affords certain
+                        flexibilities missing in others.
+                    </li>
+                    <li><b>Integration challenges:</b> Data bases, shared prefs, notifications...
+                    </li>
+                    <li><b>User Experience</b>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>User experience</h3>
+            </section>
+        </section>
+    </section>
 </div>
 
 <script src="lib/js/head.min.js"></script>
@@ -636,6 +657,13 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+
+
+
+
+
+
+
 
 
 
