@@ -14,3 +14,12 @@ p.small {
     display: flex;
     justify-content: center;
 }
+
+.project {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.md-html *{
+    font-size: 96%;
+ }
