@@ -20,20 +20,6 @@
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </script>
 </head>
 <body>
@@ -58,7 +44,8 @@
                 <li class="fragment">Views and Activities</li>
                 <li class="fragment">Thread and web services</li>
                 <li class="fragment">Lists</li>
-                <li class="fragment">Images</li>
+                <li class="fragment">Useful libs</li>
+                <li class="fragment">User Experience</li>
             </ol>
         </section>
         <section>
@@ -181,7 +168,7 @@
                 <img data-src="images/linear_preview.png" height="600px">
             </section>
             <section>
-                <h3>Unavoidable keywords</h3>
+                <h3>XML ToolBox</h3>
                 <ul>
                     <li class="fragment">Margin</li>
                     <li class="fragment">Padding</li>
@@ -261,7 +248,7 @@
                 <img data-src="images/lifecycle.png" height="500px">
             </section>
             <section data-background="#C8E6C9" data-background-transition="zoom">
-                <h3>Cycle de vie d'une activity</h3>
+                <h3>Activity life cycle</h3>
 
                 <p class="small">
                     The objective of this exercise is to understand the states of the activity. We are going to use
@@ -287,10 +274,10 @@
                     <br/>
                     What happens when:
 
-                    You start an the application
-                    You receive a call
-                    You change your phone orientation (Ctrl+F11 for the emulator)
-                    You close the app
+                    You start an the application,
+                    You receive a call,
+                    You change your phone orientation (Ctrl+F11 for the emulator),
+                    You close the app ?
                 </p>
             </section>
             <section data-background="#C8E6C9" data-background-transition="zoom">
@@ -365,7 +352,7 @@
             <section>
                 <h3>How does it work?</h3>
                 <script src="https://gist.github.com/nicolasfavier/ae899c29908585baa7738c68fc4221ee.js"></script>
-                Lancer l'asynctask avec :
+                Start the async task :
                 <script src="https://gist.github.com/nicolasfavier/1ddd5f67b116490124898285146fe3c9.js"></script>
                 <br/>
             </section>
@@ -481,12 +468,12 @@
                 </ul>
             </section>
             <section>
-                <h3>Le RecyclerView</h3>
+                <h3>The RecyclerView</h3>
                 <script src="https://gist.github.com/nicolasfavier/f700a5418337e2cce68501fa31dba7dd.js"></script>
                 <script src="https://gist.github.com/nicolasfavier/f65d2d4f32d5c132ced4fb86d20d0520.js"></script>
             </section>
             <section>
-                <h3>L'adapter</h3>
+                <h3>The adapter</h3>
                 <script src="https://gist.github.com/nicolasfavier/944e7a60f062dc7adc452c8d8514bdc5.js"></script>
             </section>
             <section data-background="#C8E6C9" data-background-transition="zoom">
@@ -500,6 +487,10 @@
             </section>
         </section>
         <section>
+            <section>
+                <h1>Give me more</h1>
+                <img data-src="images/moreandroid.jpg" height="300px">
+            </section>
             <section>
                 <h1>Les images</h1>
             </section>
@@ -525,50 +516,151 @@
 
 </code></pre>
             </section>
-        </section>
-        <section>
-            <section>
-                <h1>Give me more</h1>
-                <img data-src="images/moreandroid.jpg" height="300px">
-            </section>
             <section id="butterknife">
-                <h3>Let's do it clean</h3>
-
-                <p>
-                    Loading views like this and using listeners for click events archaic and quite a pain.
-                    There is a cool librairie developed by Jake Wharton that you should use.
-                </p>
-
-                <h4>
-                    <a href="http://jakewharton.github.io/butterknife/" target="_blank">Butter Knife</a>
-                </h4>
+                <h1>ButterKnife</h1>
                 <img data-src="images/butterknife.png" height="200px">
+                <h4>
+                    Go check the lib: <a href="http://jakewharton.github.io/butterknife/" target="_blank">Butter
+                    Knife</a>
+                </h4>
             </section>
             <section>
-                <h3>ButterKnife</h3>
-                <h4>build.gradle</h4>
-                <script src="https://gist.github.com/nicolasfavier/46c6df6344816f76aa937dbe1ed5fde6.js"></script>
-                <h4>Activity.java</h4>
-                <script src="https://gist.github.com/nicolasfavier/6bc41f83e8ede4b7f9805d29f3050a4e.js"></script>
-            </section>
-            <section>
-                <h3>Networks call can be sexy</h3>
-                What problems did we encounter with classic calls ?
+                <h3>The problem :</h3>
                 <ul>
-                    <li class="fragment">Threads</li>
-                    <li class="fragment">Parsing</li>
-                    <li class="fragment">Response status</li>
+                    <li>findViewByID() over and over again</li>
+                    <li>1000 of listeners for onClick, onTextChanged...</li>
+                    <li>The size of the onCreate() method</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Comparison</h3>
+
+                <div class="container">
+                    <div class="column">
+                        <script src="https://gist.github.com/nicolasfavier/03a337d208831a1f9944bb1832b75dc0.js"></script>
+                    </div>
+                    <div class="column">
+                        <script src="https://gist.github.com/nicolasfavier/16bb9f0f7f1d07ec2901eed92b241302.js"></script>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h1>Retrofit</h1>
+                <img data-src="images/retrofit.jpg" height="200px">
+                <h4>
+                    Go check the lib:<a href="http://square.github.io/retrofit/" target="_blank"> Retrofit</a>
+
+                </h4>
+            </section>
+            <section>
+                <h3>The problem :</h3>
+                <ul>
+                    <li>AsyncTask</li>
+                    <li>Mapping the http response</li>
+                    <li>Handling errors</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Comparison</h3>
+
+                <div class="container">
+                    <div class="column">
+                        <script src="https://gist.github.com/nicolasfavier/a6a6f01d0991a8ca39e6c98c6d519886.js"></script>
+                    </div>
+                    <div class="column">
+                        <script src="https://gist.github.com/nicolasfavier/bdf2e6264a6227a1fc963b79223b5bdb.js"></script>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h1>RxAndroid</h1>
+                <h4>
+                    Go check the lib:<a href="https://github.com/ReactiveX/RxAndroid" target="_blank"> Rx Android</a>
+                </h4>
+            </section>
+            <section>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Handling threads in an elegant way</li>
+                    <li>Work on loops</li>
+                    <li>Handling errors</li>
                 </ul>
                 <br/>
+                <br/>
+
+                <h3>Cons</h3>
+                <ul>
+                    <li>Harder to read</li>
+                    <li>Harder to debug</li>
+                    <li>Other way of thinking</li>
+                </ul>
+
+            </section>
+
+            <section>
+                <h1>Dagger</h1>
+                <img data-src="images/dagger.png" height="200px">
+                <h4>
+                    Go check the lib:<a href="http://square.github.io/dagger/" target="_blank"> Dagger</a>
+                </h4>
             </section>
             <section>
-                <h3><a href="http://square.github.io/retrofit/" target="_blank">Retrofit</a></h3>
-                <script src="https://gist.github.com/nicolasfavier/eab594d9b1ae72e9c705c3a3380c95d4.js"></script>
-                <script src="https://gist.github.com/nicolasfavier/5c5af3047c58ced4ea51d99077f8e2fd.js"></script>
-                <script src="https://gist.github.com/nicolasfavier/654a2b63421fe7a6f7af135bcee378c6.js"></script>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Simple access to shared instances</li>
+                    <li>Easier unit and integration testing</li>
+                    <li>Scoped instances</li>
+                </ul>
+                <br/>
+                <br/>
+
+                <h3>Cons</h3>
+                <ul>
+                    <li>Hard to setup</li>
+                    <li>Injection errors are a pain to debug</li>
+                </ul>
             </section>
             <section>
-                RX ?
+                <h1>EventBus</h1>
+                <img data-src="images/eventbus.png" height="200px">
+                <h4>
+                    Go check the lib:<a href="https://github.com/greenrobot/EventBus" target="_blank"> EventBus</a>
+                </h4>
+            </section>
+            <section>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Simplifies the communication between components</li>
+                    <li>Decouples event senders and receivers</li>
+                    <li>Avoids complex dependencies and life cycle issues</li>
+                    <li>A simple way to handle threads</li>
+                </ul>
+                <br/>
+                <br/>
+
+                <h3>Cons</h3>
+                <ul>
+                    <li>Spaghetti Code</li>
+                    <li>Can't follow the event while debugging</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Comparison</h3>
+
+                <div class="container">
+                    <script src="https://gist.github.com/nicolasfavier/ecc2fe12f10c0877c7a9883e7b12ed6a.js"></script>
+                </div>
+            </section>
+            <section>
+                <h2>Other useful tools</h2>
+                <ul>
+                    <li><a href="https://docs.fabric.io/android/fabric/overview.html" target="_blank">Fabric</a></li>
+                    <li><a href="http://facebook.github.io/stetho/" target="_blank">Stetho</a></li>
+                    <li><a href="https://github.com/square/leakcanary" target="_blank">Leakcanary</a></li>
+                    <li><a href="https://www.google.com/intl/fr_fr/analytics/" target="_blank">Analytics</a></li>
+                    <li><a href="https://developer.android.com/studio/build/shrink-code.html" target="_blank">ProGuard</a></li>
+                    <li><a href="http://robolectric.org/" target="_blank">Robolectric</a></li>
+                </ul>
             </section>
         </section>
         <section>
@@ -635,9 +727,23 @@
                     </li>
                 </ul>
             </section>
+        </section>
+        <section>
             <section>
-                <h3>User experience</h3>
+                <h1>User experience</h1>
             </section>
+            <setctio>
+                <h3>Try it</h3>
+                //todo loic add vids
+            </setctio>
+            <setctio>
+                <h3>Check those links :</h3>
+                <ul>
+                    <li><a href="https://developer.android.com/training/best-ux.html" target="_blank">https://developer.android.com/training/best-ux.html</a></li>
+                    <li><a href="https://developer.android.com/design/index.html" target="_blank">https://developer.android.com/design/index.html</a></li>
+                    <li><a href="https://material.google.com/" target="_blank">https://material.google.com/</a></li>
+                </ul>
+            </setctio>
         </section>
     </section>
 </div>
@@ -657,21 +763,6 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
 </body>
 </html>

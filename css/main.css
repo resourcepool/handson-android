@@ -5,3 +5,12 @@ p.small {
 }
 
 .gist-data {max-height: 600px;}
+
+.column{
+ width: 650px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
