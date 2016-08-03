@@ -20,6 +20,7 @@
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
     </script>
 </head>
 <body>
@@ -57,13 +58,8 @@
             <section>
                 <h2>Excilys' Android applications</h2>
                 <ol>
-                    <li class="fragment">OSM contributor</li>
-                    <li class="fragment">SDK transilien</li>
+                    <li class="fragment">OSM contributor  </li>
                     <li class="fragment">La Poste</li>
-                    <li class="fragment">Open cyclo</li>
-                    <li class="fragment">Event tribe</li>
-                    <li class="fragment">Capico</li>
-                    <li class="fragment">Glazer</li>
                 </ol>
                 <img data-src="images/capture_genius.png" height="300px">
                 <img data-src="images/osm.png" height="300px">
@@ -635,6 +631,30 @@
                 </ul>
             </section>
             <section>
+                <h1>Retrolambda</h1>
+                <img data-src="images/retrolambda.jpg" height="200px">
+                <h4>
+                    Go check the lib:<a href="https://github.com/orfjackal/retrolambda" target="_blank"> Retrolambda</a>
+                </h4>
+            </section>
+            <section>
+                <h3>Pros</h3>
+                Use features from java8
+
+                <br/>
+                <br/>
+
+                <h3>Cons</h3>
+                Not 100% stable
+
+                <br>
+                <br>
+                <h3>Alternative</h3>
+                Android N
+                Kotlin
+
+            </section>
+            <section>
                 <h1>EventBus</h1>
                 <img data-src="images/eventbus.png" height="200px">
                 <h4>
@@ -672,9 +692,47 @@
                     <li><a href="http://facebook.github.io/stetho/" target="_blank">Stetho</a></li>
                     <li><a href="https://github.com/square/leakcanary" target="_blank">Leakcanary</a></li>
                     <li><a href="https://www.google.com/intl/fr_fr/analytics/" target="_blank">Analytics</a></li>
-                    <li><a href="https://developer.android.com/studio/build/shrink-code.html" target="_blank">ProGuard</a></li>
+                    <li><a href="https://developer.android.com/studio/build/shrink-code.html"
+                           target="_blank">ProGuard</a></li>
                     <li><a href="http://robolectric.org/" target="_blank">Robolectric</a></li>
                 </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Patterns</h1>
+            </section>
+            <section>
+                <h1>Model View Presenter</h1>
+            </section>
+            <section>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Testable / Easy to get reviewed</li>
+                    <li>Maintainable</li>
+                    <li>Information Hiding</li>
+                    <li>Split the Activity / Fragment</li>
+                </ul>
+                <br/>
+                <br/>
+
+                <h3>Cons</h3>
+                <ul>
+                    <li>Redundant, especially when the app size is small</li>
+                    <li>Requires time before starting coding ( but I bet, the architecture step is the must step for all development )</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Show me the code</h3>
+                <span class="fragment"><script src="https://gist.github.com/nicolasfavier/dce4c1dc3594250cbda2f672cb2d661e.js"></script></span>
+            </section>
+            <section>
+                <h3>The Activity</h3>
+                <span class="fragment"><script src="https://gist.github.com/nicolasfavier/e37be548b7a0b8c7e8b2fc8f9c1282e9.js"></script></span>
+            </section>
+            <section>
+                <h3>The presenter</h3>
+                <script src="https://gist.github.com/nicolasfavier/4f06340dd978c4d07864f00d104bc256.js"></script>
             </section>
         </section>
         <section>
@@ -757,8 +815,10 @@
             <section>
                 <h3>Check those links :</h3>
                 <ul>
-                    <li><a href="https://developer.android.com/training/best-ux.html" target="_blank">https://developer.android.com/training/best-ux.html</a></li>
-                    <li><a href="https://developer.android.com/design/index.html" target="_blank">https://developer.android.com/design/index.html</a></li>
+                    <li><a href="https://developer.android.com/training/best-ux.html" target="_blank">https://developer.android.com/training/best-ux.html</a>
+                    </li>
+                    <li><a href="https://developer.android.com/design/index.html" target="_blank">https://developer.android.com/design/index.html</a>
+                    </li>
                     <li><a href="https://material.google.com/" target="_blank">https://material.google.com/</a></li>
                 </ul>
             </section>
@@ -787,6 +847,7 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+
 </script>
 </body>
 </html>
