@@ -191,10 +191,10 @@
             <section data-background="#C8E6C9" data-background-transition="zoom">
                 <h3>Lets play</h3>
 
-                <p class="small">The gaol of this exercise is to build the login page. The first step is to create the
+                <p class="small">The goal of this exercise is to build the login page. The first step is to create the
                     view.
-                    View are generated with layouts, try to use the to reach the following screen. The view contains
-                    two edit text, an header and a validation button.
+                    View are generated with layouts, try to use them to reach the following screen. The view contains
+                    two edit text, a header and a validation button.
                 </p>
 
                 <h4>Toolbox:</h4>
@@ -217,7 +217,7 @@
                         android:background="#ttrrggbb"
                         <br/>
                         <br/>
-                        tt : alant de 00 à FF pour la transparence <br/>
+                        tt : from 00 to FF for transparency<br/>
                     </p>
                 </div>
                 <img style="float:left;" data-src="images/help_exo1.png" height="400px">
@@ -237,13 +237,7 @@
             <section>
                 <h3>Start an Activity</h3>
                 <img data-src="images/activity1.png" height="300px">
-<pre data-trim data-noescape>
-<code>
-    Intent intent = new Intent(this, DisplayMessagesActivity.class);
-    intent.putExtra(EXTRA_MESSAGE,
-    message);
-    startActivity(intent);
-</code></pre>
+                <script src="https://gist.github.com/nicolasfavier/9dceffe8291e03f5694ec29dbebbf119.js"></script>
             </section>
             <section data-transition="fade">
                 <h3>Backstack</h3>
@@ -279,12 +273,12 @@
 
 </code></pre>
                 <p class="small">
-                    Overide the following methods and add some explicits logs :
+                    Override the following methods and add some explicit logs :
                     onCreate, onDestroy, onPause, onResume, onSaveInstanceState, onRestoreInstanceState
                     <br/>
                     What happens when:
 
-                    You start an the application,
+                    You start the application,
                     You receive a call,
                     You change your phone orientation (Ctrl+F11 for the emulator),
                     You close the app ?
@@ -312,7 +306,7 @@
 
 </code></pre>
                 <p class="small">
-                    Add a listener on the buttons, it can either be in our outside of the class.
+                    Add a listener on the buttons, it can either be in or outside of the class.
                     Implement the "Clear" button and the "Send" button, when the send button is clicked show a toast.
 <pre data-trim data-noescape>
 <code>
@@ -327,7 +321,7 @@
                 <p class="small">
                     Add some validation on the fly or at the button click. Check that the fields aren't empty and the
                     password is at least 3 characters.
-                    To display the error, use a classic TextView and chage its visibility.
+                    To display the error, use a classic TextView and chagne its visibility.
                 </p>
 <pre data-trim data-noescape>
 <code>
@@ -349,10 +343,10 @@
             </section>
             <section>
                 <h3>UI-Thread</h3>
-                Only one thread can modify the view. It's the Ui thread<br/>
+                Only one thread can modify the view. It's the Ui thread (Main thread).
                 This thread is also responsible for all client interaction with the app.<br/>
 
-                What happens if you do evy jobs in this thread ?
+                What happens if you do heavy jobs in this thread ?
                 <img class="fragment" data-src="images/lag.gif" height="300px">
             </section>
             <section>
@@ -370,10 +364,13 @@
                 <h3>AsyncTask params</h3>
                 The three kind of params used by the asyncTask are:
 
-                <b>Params</b>,the type send at the execution.<br/>
-                <b>Progress</b>, the type send to the progress.<br/>
-                <b>Result</b>, the type sent at the end of the asynctask.<br/><br/>
-                Params are not always used, if so you can change it by Void.
+                <ul>
+                    <li><b>Params</b>,the type send at the execution.</li>
+                    <li><b>Progress</b>, the type send to the progress.</li>
+                    <li><b>Result</b>, the type send at the end of the asynctask.</li>
+                </ul><br/>
+
+                <li>Params are not always used. If so you can change it by Void.</li>
 
 <pre data-trim data-noescape>
 <code>
@@ -415,7 +412,7 @@
                     In the onPreExecute method, display a loading wheel.<br/>
                     In the onPostExecute method, hide the loading wheel.<br/>
                     In the doInBackground method, execute your network call<br/>
-                    L'URL qui doit être appelée est :
+                    Use the following url:
 
                     <br/><br/><a>http://training.loicortola.com/parlez-vous-android/register/[username]/[password]</a><br/><br/>
 
@@ -452,8 +449,8 @@
             <section>
                 <h3>Single element</h3>
                 Now that we have a container we need to add elements in it,
-                So we create a new xml for the view of a single element.<br/>
-                Create an xml : element_message.xml with tow TextView, one for the message, and an other one for the
+                so we create a new xml for the view of a single element.<br/>
+                Create an xml : element_message.xml with two TextView, one for the message, and an other one for the
                 author.
             </section>
             <section>
@@ -469,7 +466,7 @@
                 <img data-src="images/fight.gif">
             </section>
             <section>
-                <h3>The RecyclerView</h3>
+                <h3>The RecyclerView since Lolipop</h3>
                 <ul>
                     <li>View holders</li>
                     <li>Layout Manager</li>
@@ -706,6 +703,10 @@
                 <h1>Model View Presenter</h1>
             </section>
             <section>
+                <h3>MVP</h3>
+                <img data-src="images/mvp.png" height="500px">
+            </section>
+            <section>
                 <h3>Pros</h3>
                 <ul>
                     <li>Testable / Easy to get reviewed</li>
@@ -719,7 +720,7 @@
                 <h3>Cons</h3>
                 <ul>
                     <li>Redundant, especially when the app size is small</li>
-                    <li>Requires time before starting coding ( but I bet, the architecture step is the must step for all development )</li>
+                    <li>Requires time before starting coding (but I bet, the architecture step is the must step for all development)</li>
                 </ul>
             </section>
             <section>
@@ -748,7 +749,7 @@
                 </p>
                 <img data-src="images/phonegap_cordova.jpg" height="200px">
 
-                <p>It privides mobile apps with HTML, CSS & JS, target multiple platforms with one code base, Free and
+                <p>It provides mobile apps with HTML, CSS & JS, target multiple platforms with one code base, Free and
                     open
                     source</p>
             </section>
