@@ -21,6 +21,8 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 
+
+
     </script>
 </head>
 <body>
@@ -32,7 +34,7 @@
             <img data-src="images/android.gif">
 
             <p>
-                <small>By <a href="http://excilys.com/" target="_blank">Excilys</a></small>
+                <small>By <a href="https://github.com/resourcepool" target="_blank">Resourcepool</a></small>
             </p>
         </section>
         <section>
@@ -56,28 +58,25 @@
                 <h1>Introduction</h1>
             </section>
             <section>
-                <h2>Excilys' Android applications</h2>
-                <ol>
-                    <li class="fragment">OSM contributor  </li>
-                    <li class="fragment">La Poste</li>
-                </ol>
-                <img data-src="images/capture_genius.png" height="300px">
-                <img data-src="images/osm.png" height="300px">
-            </section>
-            <section>
                 <h3>Any ideas of the numbers?</h3>
 
                 <div class="fragment">
                     <img data-src="images/devices.png" height="250px">
                     <img data-src="images/os_market_share.png" height="250px">
+                    <a class="ref"
+                       href="http://www.zdnet.fr/actualites/chiffres-cles-les-os-pour-smartphones-39790245.htm"
+                       target="_blank">june 2016</a>
                 </div>
             </section>
             <section>
                 <h3>Let's talk about money!</h3>
 
                 <div class="fragment">
-                    <img data-src="images/apps.png" height="300px">
+                    <img data-src="images/apps.png" height="250px">
                     <img data-src="images/prices.jpg" height="250px">
+                    <a class="ref"
+                       href="http://www.phonandroid.com/google-play-store-vs-apple-app-store-match-sommet.html"
+                       target="_blank"> 9 june 2016</a>
                 </div>
             </section>
             <section>
@@ -107,17 +106,27 @@
                 <div class="fragment">
                     <img data-src="images/density.png" height="250px">
                     <img data-src="images/screeensize.png" height="250px">
+                    <a class="ref" href="https://developer.android.com/about/dashboards/index.html" target="_blank">August
+                        1, 2016, devloper.android </a>
                 </div>
             </section>
             <section>
                 <h3>Versions</h3>
-                <img class="fragment" data-src="images/versions.png" height="250px">
-                <img class="fragment" data-src="images/versions.jpg" height="250px">
+
+                <div class="fragment">
+                    <img data-src="images/versions.png" height="250px">
+                    <img data-src="images/versions.jpg" height="250px">
+                    <a class="ref" href="https://developer.android.com/about/dashboards/index.html" target="_blank">August
+                        1, 2016, devloper.android </a>
+                </div>
             </section>
             <section>
                 <h3>Network and energy</h3>
-                <img class="fragment" data-src="images/no_data.gif" height="250px">
-                <img class="fragment" data-src="images/no_battery.gif" height="250px">
+
+                <div class="fragment">
+                    <img data-src="images/no_data.gif" height="250px">
+                    <img data-src="images/no_battery.gif" height="250px">
+                </div>
             </section>
             <section>
                 <h3>How does it work?</h3>
@@ -126,7 +135,7 @@
             <section>
                 <h3>JVM vs DALVIK ?</h3>
                 <!--https://developer.android.com/studio/build/index.html-->
-                <img data-src="images/dalvik_build.png" height="500px">
+                <img data-src="images/jvm-dalvik.png" height="500px">
             </section>
             <section>
                 <h3>Next fight : ART vs DALVIK</h3>
@@ -188,7 +197,7 @@
                     <li class="fragment">layout_centerInParent</li>
                 </ul>
             </section>
-            <section data-background="#C8E6C9" data-background-transition="zoom">
+            <section data-background="#BBDEFB" data-background-transition="zoom">
                 <h3>Lets play</h3>
 
                 <p class="small">The goal of this exercise is to build the login page. The first step is to create the
@@ -222,7 +231,7 @@
                 </div>
                 <img style="float:left;" data-src="images/help_exo1.png" height="400px">
             </section>
-            <section data-background="#C8E6C9">
+            <section data-background="#BBDEFB">
                 <h3>Bonus</h3>
 
                 <p class="small">From the menu in the login page, open a new activity. In this new Activity try to
@@ -251,7 +260,7 @@
                 <h3>Life cycle</h3>
                 <img data-src="images/lifecycle.png" height="500px">
             </section>
-            <section data-background="#C8E6C9" data-background-transition="zoom">
+            <section data-background="#BBDEFB" data-background-transition="zoom">
                 <h3>Activity life cycle</h3>
 
                 <p class="small">
@@ -284,7 +293,7 @@
                     You close the app ?
                 </p>
             </section>
-            <section data-background="#C8E6C9" data-background-transition="zoom">
+            <section data-background="#BBDEFB" data-background-transition="zoom">
                 <h3>User interactions</h3>
 
                 <p class="small">
@@ -315,7 +324,7 @@
 </code></pre>
                 </p>
             </section>
-            <section data-background="#C8E6C9" data-background-transition="zoom">
+            <section data-background="#BBDEFB" data-background-transition="zoom">
                 <h3>Bonus</h3>
 
                 <p class="small">
@@ -368,31 +377,19 @@
                     <li><b>Params</b>,the type send at the execution.</li>
                     <li><b>Progress</b>, the type send to the progress.</li>
                     <li><b>Result</b>, the type send at the end of the asynctask.</li>
-                </ul><br/>
+                </ul>
+                <br/>
 
                 <li>Params are not always used. If so you can change it by Void.</li>
-
-<pre data-trim data-noescape>
-<code>
-    private class LoginTask extends AsyncTask&lt;Void, Void, Void&gt; { ... }
-
-</code></pre>
+                <br/>
+                <br/>
+                <script src="https://gist.github.com/nicolasfavier/57cd8252c03f07b38cdfdd8bd8f8164a.js"></script>
             </section>
             <section>
                 <h3>Network call</h3>
-<pre data-trim data-noescape>
-<code>
-    URL url = new URL("http://www.android.com/");
-    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-    try {
-    InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-    readStream(in);
-    } finally {
-    urlConnection.disconnect();
-    }
-</code></pre>
+                <script src="https://gist.github.com/nicolasfavier/3d5ad53ebb198f2f3de88762da4239a2.js"></script>
             </section>
-            <section data-background="#C8E6C9" data-background-transition="zoom">
+            <section data-background="#BBDEFB" data-background-transition="zoom">
                 <h3>Login on the server</h3>
 
                 <p class="small">
@@ -483,10 +480,10 @@
                 <h3>The adapter</h3>
                 <script src="https://gist.github.com/nicolasfavier/944e7a60f062dc7adc452c8d8514bdc5.js"></script>
             </section>
-            <section data-background="#C8E6C9" data-background-transition="zoom">
+            <section data-background="#BBDEFB" data-background-transition="zoom">
                 <h3>Retrieve messages</h3>
             </section>
-            <section data-background="#C8E6C9">
+            <section data-background="#BBDEFB">
                 <h3>Infinite scroll</h3>
                 <img src="images/buz.jpg" height="300px">
                 <img src="images/infinitescroll.png" height="300px">
@@ -646,6 +643,7 @@
 
                 <br>
                 <br>
+
                 <h3>Alternative</h3>
                 Android N
                 Kotlin
@@ -720,16 +718,20 @@
                 <h3>Cons</h3>
                 <ul>
                     <li>Redundant, especially when the app size is small</li>
-                    <li>Requires time before starting coding (but I bet, the architecture step is the must step for all development)</li>
+                    <li>Requires time before starting coding (but I bet, the architecture step is the must step for all
+                        development)
+                    </li>
                 </ul>
             </section>
             <section>
                 <h3>Show me the code</h3>
-                <span class="fragment"><script src="https://gist.github.com/nicolasfavier/dce4c1dc3594250cbda2f672cb2d661e.js"></script></span>
+                <span class="fragment"><script
+                        src="https://gist.github.com/nicolasfavier/dce4c1dc3594250cbda2f672cb2d661e.js"></script></span>
             </section>
             <section>
                 <h3>The Activity</h3>
-                <span class="fragment"><script src="https://gist.github.com/nicolasfavier/e37be548b7a0b8c7e8b2fc8f9c1282e9.js"></script></span>
+                <span class="fragment"><script
+                        src="https://gist.github.com/nicolasfavier/e37be548b7a0b8c7e8b2fc8f9c1282e9.js"></script></span>
             </section>
             <section>
                 <h3>The presenter</h3>
@@ -848,6 +850,8 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+
+
 
 </script>
 </body>

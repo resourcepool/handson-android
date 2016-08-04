@@ -23,3 +23,8 @@ p.small {
 .md-html *{
     font-size: 96%;
  }
+
+a.ref{
+    font-size: 15px;
+    display: block;
+}
