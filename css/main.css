@@ -1,0 +1,30 @@
+p.small {
+    font-size: 0.6em;
+    text-align: left;
+    line-height: 25px;
+}
+
+.gist-data {max-height: 600px;}
+
+.column{
+ width: 650px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.project {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.md-html *{
+    font-size: 96%;
+ }
+
+a.ref{
+    font-size: 15px;
+    display: block;
+}

@@ -1,0 +1,863 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Android hands-on</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/serif.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+
+
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <section class="slides">
+        <section>
+            <h2>Android hands-on</h2>
+            <h4><i class="icon-android"></i>advanced learning</h4>
+            <img data-src="images/android.gif">
+		http://resourcepool.github.io/handson-android
+            <p>
+                <small>By <a href="https://github.com/resourcepool" target="_blank">Resourcepool</a></small>
+            </p>
+        </section>
+        <section>
+            <h1>Table of content</h1>
+            <ol>
+                <li class="fragment"><a href="#/introduction"> Introduction</a></li>
+                <li class="fragment"><a href="#/environment"> Environment</a></li>
+                <li class="fragment"><a href="#/architecture"> Architecture</a></li>
+                <li class="fragment"><a href="#/layouts"> Layouts</a></li>
+                <li class="fragment"><a href="#/views"> Views and Activities</a></li>
+                <li class="fragment"><a href="#/thread"> Thread and web services</a></li>
+                <li class="fragment"><a href="#/lists"> Lists</a></li>
+                <li class="fragment"><a href="#/libs"> Useful libs</a></li>
+                <li class="fragment"><a href="#/cross"> Cross Platforms</a></li>
+                <li class="fragment"><a href="#/ux"> User Experience</a></li>
+                <li class="fragment"><a href="project.html" target="_blank">Project</a></li>
+            </ol>
+        </section>
+        <section>
+            <section id="introduction">
+                <h1>Introduction</h1>
+            </section>
+            <section>
+                <h3>Any ideas of the numbers?</h3>
+
+                <div class="fragment">
+                    <img data-src="images/devices.png" height="250px">
+                    <img data-src="images/os_market_share.png" height="250px">
+                    <a class="ref"
+                       href="http://www.zdnet.fr/actualites/chiffres-cles-les-os-pour-smartphones-39790245.htm"
+                       target="_blank">june 2016</a>
+                </div>
+            </section>
+            <section>
+                <h3>Let's talk about money!</h3>
+
+                <div class="fragment">
+                    <img data-src="images/apps.png" height="250px">
+                    <img data-src="images/prices.jpg" height="250px">
+                    <a class="ref"
+                       href="http://www.phonandroid.com/google-play-store-vs-apple-app-store-match-sommet.html"
+                       target="_blank"> 9 june 2016</a>
+                </div>
+            </section>
+            <section>
+                <h3>How much was whatsapp sold for ?</h3>
+
+                <div class="fragment">
+                    <h4>22 billion $</h4>
+                    <img data-src="images/price1.png" height="300px">
+                    <img data-src="images/price2.png" height="300px">
+                </div>
+            </section>
+            <section>
+                <h3>Main course goals</h3>
+                <ul>
+                    <li>Discover Android</li>
+                    <li>Make a whole project, from first line to release</li>
+                    <li>Make your own ass-kicking awesome app</li>
+                    <li>Learn the best practices and good design habits</li>
+                    <li>Go home with new skills, and ideas to go further</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section id="environment">
+                <h1>Environment</h1>
+            </section>
+            <section>
+                <h3>What are the major challenges faced by android application developers?</h3>
+            </section>
+            <section>
+                <h3>Screens</h3>
+
+                <div class="fragment">
+                    <img data-src="images/density.png" height="250px">
+                    <img data-src="images/screeensize.png" height="250px">
+                    <a class="ref" href="https://developer.android.com/about/dashboards/index.html" target="_blank">August
+                        1, 2016, devloper.android </a>
+                </div>
+            </section>
+            <section>
+                <h3>Versions</h3>
+
+                <div class="fragment">
+                    <img data-src="images/versions.png" height="250px">
+                    <img data-src="images/versions.jpg" height="250px">
+                    <a class="ref" href="https://developer.android.com/about/dashboards/index.html" target="_blank">August
+                        1, 2016, devloper.android </a>
+                </div>
+            </section>
+            <section>
+                <h3>Network and energy</h3>
+                <img data-src="images/no_data.gif" height="250px">
+                <img data-src="images/no_battery.gif" height="250px">
+            </section>
+            <section>
+                <h3>How does it work?</h3>
+                <img class="fragment" data-src="images/android_linux.png" height="400px">
+            </section>
+            <section>
+                <h3>JVM vs DALVIK ?</h3>
+                <!--https://developer.android.com/studio/build/index.html-->
+                <img data-src="images/jvm-dalvik.png" height="500px">
+            </section>
+            <section>
+                <h3>Next fight : ART vs DALVIK</h3>
+                <img data-src="images/art.png" height="500px">
+            </section>
+        </section>
+        <section>
+            <section id="architecture">
+                <h1>Architecture</h1>
+            </section>
+            <section>
+                <h3>Go Android, build my app!</h3>
+                <ol>
+                    <li>Android Studio:
+                        <a href="http://developer.android.com/tools/sdk" target="_blank">http://developer.android.com/tools/sdk</a>
+                    </li>
+                    <li>Official documentation:
+                        <a href="http://developer.android.com" target="_blank">http://developer.android.com</a>
+                    </li>
+                </ol>
+                <img data-src="images/newProject.png" height="500px">
+                <img data-src="images/newProject2.png" height="500px">
+            </section>
+            <section>
+                <h3>Project structure</h3>
+                <img data-src="images/archi.png" height="600px">
+            </section>
+            <section>
+                <h3>The manifest</h3>
+                <script src="https://gist.github.com/nicolasfavier/5dab0743ba4a05e8a2447cac8bccda18.js"></script>
+            </section>
+        </section>
+        <section>
+            <section id="layouts">
+                <h1>Layouts</h1>
+            </section>
+            <section>
+                <h3>WYSIWYG</h3>
+                <img data-src="images/WYSIWYG.png" height="500px">
+            </section>
+            <section>
+                <h3>Linear layout</h3>
+                <img data-src="images/linear.png" height="600px">
+                <img data-src="images/linear_preview.png" height="600px">
+            </section>
+            <section>
+                <h3>Relative layout</h3>
+                <img data-src="images/relative.png" height="600px">
+                <img data-src="images/linear_preview.png" height="600px">
+            </section>
+            <section>
+                <h3>XML ToolBox</h3>
+                <ul>
+                    <li class="fragment">Margin</li>
+                    <li class="fragment">Padding</li>
+                    <li class="fragment">layout_below / layout_above</li>
+                    <li class="fragment">layout_toEndOf / layout_toStartOf</li>
+                    <li class="fragment">layout_centerHorizontal / layout_centerVertical
+                    <li class="fragment">layout_centerInParent</li>
+                </ul>
+            </section>
+            <section data-background="#BBDEFB" data-background-transition="zoom">
+                <h3>Lets play</h3>
+
+                <p class="small">The goal of this exercise is to build the login page. The first step is to create the
+                    view.
+                    View are generated with layouts, try to use them to reach the following screen. The view contains
+                    two edit text, a header and a validation button.
+                </p>
+
+                <h4>Toolbox:</h4>
+
+                <div style="float:left; width: 500px; display: inline-block;">
+                    <p class="small">
+                        <b>TextView</b> to display a simple text<br/>
+                        <b>EditText</b> allows the user to write a text<br/>
+                        <b>ScrollView</b> to scroll the contents<br/>
+                        <b>Button</b> guess what, a button<br/>
+                    </p>
+
+                    <p class="small">
+                        The best way to start with layout is to add background color to layouts, it will help you
+                        with margin, padding... To do so use :
+                    </p>
+
+                    <p class="small">
+                        <br/>
+                        android:background="#ttrrggbb"
+                        <br/>
+                        <br/>
+                        tt : from 00 to FF for transparency<br/>
+                    </p>
+                </div>
+                <div style="float:left;">
+                  <img data-src="images/ex1_screenshot.png" height="300px">
+                  <img data-src="images/ex1_hint.png" height="300px">
+                </div>
+
+            </section>
+            <section data-background="#BBDEFB">
+                <h3>Bonus</h3>
+
+                <p class="small">From the menu in the login page, open a new activity. In this new Activity try to
+                    reproduce the following image</p>
+                <img data-src="images/exo2-bonus.png" height="400px">
+            </section>
+        </section>
+        <section>
+            <section id="views">
+                <h1>Views and activities</h1>
+            </section>
+            <section>
+                <h3>Start an Activity</h3>
+                <img data-src="images/activity1.png" height="300px">
+                <script src="https://gist.github.com/nicolasfavier/9dceffe8291e03f5694ec29dbebbf119.js"></script>
+            </section>
+            <section data-transition="fade">
+                <h3>Backstack</h3>
+                <img data-src="images/backstack1.png" height="500px">
+            </section>
+            <section data-transition="fade">
+                <h3>Backstack</h3>
+                <img data-src="images/backstack2.png" height="500px">
+            </section>
+            <section>
+                <h3>Life cycle</h3>
+                <img data-src="images/lifecycle.png" height="500px">
+            </section>
+            <section data-background="#BBDEFB" data-background-transition="zoom">
+                <h3>Activity life cycle</h3>
+
+                <p class="small">
+                    The objective of this exercise is to understand the states of the activity. We are going to use
+                    Android API to log those events.
+                </p>
+<pre data-trim data-noescape>
+<code>
+    Log.i(TAG, "onCreate!");
+
+</code></pre>
+                <p class="small">
+                    A common practice is to add a TAG to the class for all logs.
+                </p>
+<pre data-trim data-noescape>
+<code>
+    public class ParlezVousActivity extends Activity {
+    private final String TAG = ParlezVousActivity.class.getSimpleName();
+
+</code></pre>
+                <p class="small">
+                    Override the following methods and add some explicit logs :
+                    onCreate, onDestroy, onPause, onResume, onSaveInstanceState, onRestoreInstanceState
+                    <br/>
+                    What happens when:
+
+                    You start the application,
+                    You receive a call,
+                    You change your phone orientation (Ctrl+F11 for the emulator),
+                    You close the app ?
+                </p>
+            </section>
+            <section data-background="#BBDEFB" data-background-transition="zoom">
+                <h3>User interactions</h3>
+
+                <p class="small">
+                    It's now time to listen and handle the view from the activity. We are going to add some behavior in
+                    our login page.
+
+                    In the onCreate method of the activity, recover the objects of the view you want to manipulate.
+                    Use the findViewById() method:</p>
+<pre data-trim data-noescape>
+<code>
+    Log.i(TAG, "onCreate!");
+    private EditText usernameField;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    usernameField = (EditText) findViewById(R.id.username_field);
+
+</code></pre>
+                <p class="small">
+                    Add a listener on the buttons, it can either be in or outside of the class.
+                    Implement the "Clear" button and the "Send" button, when the send button is clicked show a toast.
+<pre data-trim data-noescape>
+<code>
+    Toast.makeText(this, "Toast !", Toast.LENGTH_SHORT).show();
+
+</code></pre>
+                </p>
+            </section>
+            <section data-background="#BBDEFB" data-background-transition="zoom">
+                <h3>Bonus</h3>
+
+                <p class="small">
+                    Add some validation on the fly or at the button click. Check that the fields aren't empty and the
+                    password is at least 3 characters.
+                    To display the error, use a classic TextView and chagne its visibility.
+                </p>
+<pre data-trim data-noescape>
+<code>
+    setVisibility(View.VISIBLE);
+
+</code></pre>
+                <br/>
+
+                <p class="small">
+                    If you still have time you can start to use <a href="#/butterknife">Butter Knife</a>, a cool way to
+                    load
+                    view and catch user interactions.
+                </p>
+            </section>
+        </section>
+        <section>
+            <section id="thread">
+                <h1>Thread and web services</h1>
+            </section>
+            <section>
+                <h3>UI-Thread</h3>
+                Only one thread can modify the view. It's the Ui thread (Main thread).
+                This thread is also responsible for all client interaction with the app.<br/>
+
+                What happens if you do heavy jobs in this thread ?
+                <img class="fragment" data-src="images/lag.gif" height="300px">
+            </section>
+            <section>
+                <h3>Asynctask</h3>
+                <img data-src="images/AsyncTask.png" height="500px">
+            </section>
+            <section>
+                <h3>How does it work?</h3>
+                <script src="https://gist.github.com/nicolasfavier/ae899c29908585baa7738c68fc4221ee.js"></script>
+                Start the async task :
+                <script src="https://gist.github.com/nicolasfavier/1ddd5f67b116490124898285146fe3c9.js"></script>
+                <br/>
+            </section>
+            <section>
+                <h3>AsyncTask params</h3>
+                The three kind of params used by the asyncTask are:
+
+                <ul>
+                    <li><b>Params</b>,the type send at the execution.</li>
+                    <li><b>Progress</b>, the type send to the progress.</li>
+                    <li><b>Result</b>, the type send at the end of the asynctask.</li>
+                </ul>
+                <br/>
+
+                <li>Params are not always used. If so you can change it by Void.</li>
+                <br/>
+                <br/>
+                <script src="https://gist.github.com/nicolasfavier/57cd8252c03f07b38cdfdd8bd8f8164a.js"></script>
+            </section>
+            <section>
+                <h3>Network call</h3>
+                <script src="https://gist.github.com/nicolasfavier/3d5ad53ebb198f2f3de88762da4239a2.js"></script>
+            </section>
+            <section data-background="#BBDEFB" data-background-transition="zoom">
+                <h3>Login on the server</h3>
+
+                <p class="small">
+                    The objective of the exercise is to send our previous form to a REST web service.<br/>
+                    First thing first, we need to add the internet permission.
+                    Do you remember where ?
+                    <span class="fragment">AndroidManifest.xml</span>
+
+                </p>
+<pre data-trim data-noescape class="fragment">
+<code>
+    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+
+</code></pre>
+                <p class="small fragment">
+                  Use the following url to register your user into the database:
+                  <br/><br/><a href="https://training.loicortola.com/chat-rest" target="_blank">https://training.loicortola.com/chat-rest</a><br/><br/>
+                    Create the LoginTask that extends android.os.AsyncTask.<br/>
+                    In the <b>onPreExecute</b> method, display a loading wheel.<br/>
+                    In the <b>onPostExecute</b> method, hide the loading wheel.<br/>
+                    In the <b>doInBackground</b> method, execute your network call<br/>
+                    The Webservice endpoint is https://training.loicortola.com/chat-rest/1.0/connect/[username]/[password]<br/>
+                    The HTTP method to use is: GET<br/><br/>
+                    Status <span style="color: #4CAF50;">200-OK</span> JSON response {"status":200,"message":"Login
+                    successful"} if everything went well.<br/><br/>
+                    Status <span style="color: #F44336;">401-UNAUTHORIZED</span> JSON response
+                    {"status":401,"message":"...","elements":"..."} if login or/and password provided are not correct
+                </p>
+            </section>
+        </section>
+        <section>
+            <section id="lists">
+                <h1>Lists</h1>
+            </section>
+            <section>
+                <h3>Lists</h3>
+
+                <p class="fragment">How would you build a list ?</p>
+
+                <p class="fragment">What happens if you have more than 4000 elements ?</p>
+
+                <p class="fragment">So how is it done ?</p>
+                <img class="fragment" data-src="images/RecyclerView.png">
+            </section>
+            <section>
+                <h3>ListView</h3>
+                ListView is a view group that displays a scrollable list of items. The list items are automatically
+                inserted to the list using an Adapter that pulls content from a source such as an array and converts
+                each item result into a view that's placed into the list.
+                <script src="https://gist.github.com/nicolasfavier/c1e70b55e78a0235192d9a58754d7eee.js"></script>
+            </section>
+            <section>
+                <h3>Single element</h3>
+                Now that we have a container we need to add elements in it,
+                so we create a new xml for the view of a single element.<br/>
+                Create an xml : element_message.xml with two TextView, one for the message, and an other one for the
+                author.
+            </section>
+            <section>
+                <h3>Base adapter</h3>
+                <script src="https://gist.github.com/nicolasfavier/f1bef26b7fbfd76b1594f47971620574.js"></script>
+            </section>
+            <section>
+                <h3>Lets merge it</h3>
+                <script src="https://gist.github.com/nicolasfavier/e12e4a35c371161f2c1c8c6758e41e1d.js"></script>
+            </section>
+            <section>
+                <h3>LitView vs RecyclerView</h3>
+                <img data-src="images/fight.gif">
+            </section>
+            <section>
+                <h3>The RecyclerView since Lolipop</h3>
+                <ul>
+                    <li>View holders</li>
+                    <li>Layout Manager</li>
+                    <li>Item Animator</li>
+                    <li>Item Decoration</li>
+                </ul>
+            </section>
+            <section>
+                <h3>The RecyclerView</h3>
+                <script src="https://gist.github.com/nicolasfavier/f700a5418337e2cce68501fa31dba7dd.js"></script>
+                <script src="https://gist.github.com/nicolasfavier/f65d2d4f32d5c132ced4fb86d20d0520.js"></script>
+            </section>
+            <section>
+                <h3>The adapter</h3>
+                <script src="https://gist.github.com/nicolasfavier/944e7a60f062dc7adc452c8d8514bdc5.js"></script>
+            </section>
+            <section data-background="#BBDEFB" data-background-transition="zoom">
+                <h3>Retrieve messages</h3>
+            </section>
+            <section data-background="#BBDEFB">
+                <h3>Infinite scroll</h3>
+                <img src="images/buz.jpg" height="300px">
+                <img src="images/infinitescroll.png" height="300px">
+                <script src="https://gist.github.com/nicolasfavier/17f6b8ae4e3bdf9505d63e1eb56303c5.js"></script>
+            </section>
+        </section>
+        <section>
+            <section id="libs">
+                <h1>Give me more</h1>
+                <img data-src="images/moreandroid.jpg" height="300px">
+            </section>
+            <section>
+                <h1>Les images</h1>
+            </section>
+            <section>
+                <h3>
+                    <a href="http://square.github.io/picasso/" target="_blank">Picasso</a>
+                    <a href="https://github.com/bumptech/glide" target="_blank">Glide</a></h3>
+                <pre data-trim data-noescape>
+<code>
+    repositories {
+    mavenCentral() // jcenter() works as well because it pulls from Maven Central
+    }
+
+    dependencies {
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:support-v4:19.1.0'
+    }
+
+</code></pre>
+<pre data-trim data-noescape>
+<code>
+    Glide.with(this).load("http://goo.gl/gEgYUd").into(imageView);
+
+</code></pre>
+            </section>
+            <section id="butterknife">
+                <h1>ButterKnife</h1>
+                <img data-src="images/butterknife.png" height="200px">
+                <h4>
+                    Go check the lib: <a href="http://jakewharton.github.io/butterknife/" target="_blank">Butter
+                    Knife</a>
+                </h4>
+            </section>
+            <section>
+                <h3>The problem :</h3>
+                <ul>
+                    <li>findViewByID() over and over again</li>
+                    <li>1000 of listeners for onClick, onTextChanged...</li>
+                    <li>The size of the onCreate() method</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Comparison</h3>
+
+                <div class="container">
+                    <div class="column">
+                        <script src="https://gist.github.com/nicolasfavier/03a337d208831a1f9944bb1832b75dc0.js"></script>
+                    </div>
+                    <div class="column">
+                        <script src="https://gist.github.com/nicolasfavier/16bb9f0f7f1d07ec2901eed92b241302.js"></script>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h1>Retrofit</h1>
+                <img data-src="images/retrofit.jpg" height="200px">
+                <h4>
+                    Go check the lib:<a href="http://square.github.io/retrofit/" target="_blank"> Retrofit</a>
+
+                </h4>
+            </section>
+            <section>
+                <h3>The problem :</h3>
+                <ul>
+                    <li>AsyncTask</li>
+                    <li>Mapping the http response</li>
+                    <li>Handling errors</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Comparison</h3>
+
+                <div class="container">
+                    <div class="column">
+                        <script src="https://gist.github.com/nicolasfavier/a6a6f01d0991a8ca39e6c98c6d519886.js"></script>
+                    </div>
+                    <div class="column">
+                        <script src="https://gist.github.com/nicolasfavier/bdf2e6264a6227a1fc963b79223b5bdb.js"></script>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h1>RxAndroid</h1>
+                <h4>
+                    Go check the lib:<a href="https://github.com/ReactiveX/RxAndroid" target="_blank"> Rx Android</a>
+                </h4>
+            </section>
+            <section>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Handling threads in an elegant way</li>
+                    <li>Work on loops</li>
+                    <li>Handling errors</li>
+                </ul>
+                <br/>
+                <br/>
+
+                <h3>Cons</h3>
+                <ul>
+                    <li>Harder to read</li>
+                    <li>Harder to debug</li>
+                    <li>Other way of thinking</li>
+                </ul>
+
+            </section>
+
+            <section>
+                <h1>Dagger</h1>
+                <img data-src="images/dagger.png" height="200px">
+                <h4>
+                    Go check the lib:<a href="http://square.github.io/dagger/" target="_blank"> Dagger</a>
+                </h4>
+            </section>
+            <section>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Simple access to shared instances</li>
+                    <li>Easier unit and integration testing</li>
+                    <li>Scoped instances</li>
+                </ul>
+                <br/>
+                <br/>
+
+                <h3>Cons</h3>
+                <ul>
+                    <li>Hard to setup</li>
+                    <li>Injection errors are a pain to debug</li>
+                </ul>
+            </section>
+            <section>
+                <h1>Retrolambda</h1>
+                <img data-src="images/retrolambda.jpg" height="200px">
+                <h4>
+                    Go check the lib:<a href="https://github.com/orfjackal/retrolambda" target="_blank"> Retrolambda</a>
+                </h4>
+            </section>
+            <section>
+                <h3>Pros</h3>
+                Use features from java8
+
+                <br/>
+                <br/>
+
+                <h3>Cons</h3>
+                Not 100% stable
+
+                <br>
+                <br>
+
+                <h3>Alternative</h3>
+                Android N
+                Kotlin
+
+            </section>
+            <section>
+                <h1>EventBus</h1>
+                <img data-src="images/eventbus.png" height="200px">
+                <h4>
+                    Go check the lib:<a href="https://github.com/greenrobot/EventBus" target="_blank"> EventBus</a>
+                </h4>
+            </section>
+            <section>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Simplifies the communication between components</li>
+                    <li>Decouples event senders and receivers</li>
+                    <li>Avoids complex dependencies and life cycle issues</li>
+                    <li>A simple way to handle threads</li>
+                </ul>
+                <br/>
+                <br/>
+
+                <h3>Cons</h3>
+                <ul>
+                    <li>Spaghetti Code</li>
+                    <li>Can't follow the event while debugging</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Comparison</h3>
+
+                <div class="container">
+                    <script src="https://gist.github.com/nicolasfavier/ecc2fe12f10c0877c7a9883e7b12ed6a.js"></script>
+                </div>
+            </section>
+            <section>
+                <h2>Other useful tools</h2>
+                <ul>
+                    <li><a href="https://docs.fabric.io/android/fabric/overview.html" target="_blank">Fabric</a></li>
+                    <li><a href="http://facebook.github.io/stetho/" target="_blank">Stetho</a></li>
+                    <li><a href="https://github.com/square/leakcanary" target="_blank">Leakcanary</a></li>
+                    <li><a href="https://www.google.com/intl/fr_fr/analytics/" target="_blank">Analytics</a></li>
+                    <li><a href="https://developer.android.com/studio/build/shrink-code.html"
+                           target="_blank">ProGuard</a></li>
+                    <li><a href="http://robolectric.org/" target="_blank">Robolectric</a></li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Patterns</h1>
+            </section>
+            <section>
+                <h1>Model View Presenter</h1>
+            </section>
+            <section>
+                <h3>MVP</h3>
+                <img data-src="images/mvp.png" height="500px">
+            </section>
+            <section>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Testable / Easy to get reviewed</li>
+                    <li>Maintainable</li>
+                    <li>Information Hiding</li>
+                    <li>Split the Activity / Fragment</li>
+                </ul>
+                <br/>
+                <br/>
+
+                <h3>Cons</h3>
+                <ul>
+                    <li>Redundant, especially when the app size is small</li>
+                    <li>Requires time before starting coding (but I bet, the architecture step is the must step for all
+                        development)
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>Show me the code</h3>
+                <span class="fragment"><script
+                        src="https://gist.github.com/nicolasfavier/dce4c1dc3594250cbda2f672cb2d661e.js"></script></span>
+            </section>
+            <section>
+                <h3>The Activity</h3>
+                <span class="fragment"><script
+                        src="https://gist.github.com/nicolasfavier/e37be548b7a0b8c7e8b2fc8f9c1282e9.js"></script></span>
+            </section>
+            <section>
+                <h3>The presenter</h3>
+                <script src="https://gist.github.com/nicolasfavier/4f06340dd978c4d07864f00d104bc256.js"></script>
+            </section>
+        </section>
+        <section>
+            <section id="cross">
+                <h1>Cross platforms</h1>
+            </section>
+            <section>
+                <h3>Phonegap / Cordova</h3>
+
+                <p>
+                    PhoneGap is a distribution of Apache Cordova. You can think of Apache Cordova as the engine that
+                    powers PhoneGap.
+                </p>
+                <img data-src="images/phonegap_cordova.jpg" height="200px">
+
+                <p>It provides mobile apps with HTML, CSS & JS, target multiple platforms with one code base, Free and
+                    open
+                    source</p>
+            </section>
+            <section>
+                <h3>Titanium</h3>
+
+                <p>
+                    Titanium is not an attempt at “write once, run everywhere”.
+                    <br/>
+                    There is a core of mobile development APIs which can be normalized across platforms. These areas
+                    should be targeted for code reuse.
+                    <br/>
+                    There are platform-specific APIs, UI conventions, and features which developers should incorporate
+                    when developing for that platform.
+                </p>
+                <img data-src="images/titanium.png" height="200px">
+            </section>
+            <section>
+                <h3>Xamarin</h3>
+
+                <p>
+                    Build native apps for multiple platforms on a shared C# codebase and add native code.
+                </p>
+                <img data-src="images/xamarin.png" height="200px">
+            </section>
+            <section>
+                <h3>Pros</h3>
+                <ul>
+                    <li><b>Speed:</b> faster to develop, “write once, run everywhere” (unless, the application requires
+                        a lot of
+                        customization for each platform)
+                    </li>
+                    <li><b>Simplicity:</b> Updates to your cross-platform app would, naturally, be instantly synced
+                        across all platforms and
+                        devices.
+                    </li>
+                </ul>
+                <br/>
+
+                <h3>Cons</h3>
+                <ul>
+                    <li><b>Platform limitations:</b> Each platform has its own unique style and affords certain
+                        flexibilities missing in others.
+                    </li>
+                    <li><b>Integration challenges:</b> Data bases, shared prefs, notifications...
+                    </li>
+                    <li><b>User Experience</b>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>Sum up</h3>
+                <img data-src="images/cross_comp.png" height="500px">
+            </section>
+        </section>
+        <section>
+            <section id="ux">
+                <h1>User experience</h1>
+            </section>
+            <section>
+                <h3>Try it</h3>
+                //todo loic add vids
+            </section>
+            <section>
+                <h3>Check those links :</h3>
+                <ul>
+                    <li><a href="https://developer.android.com/training/best-ux.html" target="_blank">https://developer.android.com/training/best-ux.html</a>
+                    </li>
+                    <li><a href="https://developer.android.com/design/index.html" target="_blank">https://developer.android.com/design/index.html</a>
+                    </li>
+                    <li><a href="https://material.google.com/" target="_blank">https://material.google.com/</a></li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1><a href="project.html" target="_blank">The project</a></h1>
+                <a href="project.html" target="_blank">Follow me !</a>
+            </section>
+        </section>
+    </section>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+			Reveal.initialize({
+				history: true,
+
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+
+
+
+</script>
+</body>
+</html>
