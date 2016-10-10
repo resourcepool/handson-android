@@ -1,9 +1,3 @@
 ﻿# Formation Parlez-Vous Android?
 
-*Environnement
-*L'Archytecture
-*Les layouts
-*Activity et vue
-*Thread, réseau et web services
-*Les listes
-*Les images
+[Allez voir le site : https://resourcepool.github.io/handson-android/](https://resourcepool.github.io/handson-android/#/)
