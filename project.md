@@ -50,7 +50,7 @@ Remember to stack new notifications with the old ones so you don't flood your us
 
 ### <img src="./images/stormtrooper.png" style="width: 32px;"/> Jedi master:
 It's time to get your application nice and clean. Improve your app architecture with:
-- Dagger
+- Retrofit
 - Dagger
 - RX
 
@@ -58,7 +58,7 @@ If you are still standing, implement Chat heads to complete this awesome chat.
 
 
 ### Bonus:
-
+Use the MVP pattern to provide your improve your maintainability.  
 An app must have an Easter egg to be completed, use your imagination and surprise me.
 The Ui is the identity of your application, check libs and take initiatives to make it beautiful.
 Improve the performance and the lisibility with libs as :
