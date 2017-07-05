@@ -15,12 +15,11 @@
 
     <!-- Printing and PDF exports -->
     <script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
 
 
     </script>
@@ -92,7 +91,7 @@
                 <h3>Lesson objectives</h3>
                 <img data-src="images/proj1.png" height="400px">
                 <img data-src="images/proj2.png" height="400px"><br/>
-				<a href="https://github.com/resourcepool/training-chat-rest" target="_blank">All the doc you need</a>
+                <a href="https://github.com/resourcepool/training-chat-rest" target="_blank">All the doc you need</a>
             </section>
         </section>
         <section>
@@ -116,15 +115,15 @@
 
                 <div class="fragment">
                     <img data-src="images/versions.png" height="250px">
+                    <a class="ref" href="https://developer.android.com/about/dashboards/index.html" target="_blank">Data
+                        collected during a 7-day period ending on June 5, 2017. </a>
                     <img data-src="images/versions.jpg" height="250px">
-                    <a class="ref" href="https://developer.android.com/about/dashboards/index.html" target="_blank">March 6
-                      , 2017, developer.android </a>
                 </div>
             </section>
-			<section>
-                    <img data-src="images/version2017.png" height="500px">
-                    <a class="ref" href="https://developer.android.com/about/dashboards/index.html" target="_blank">March
-                        6, 2017, developer.android </a>
+            <section>
+                <img data-src="images/version2017.png" height="500px">
+                <a class="ref" href="https://developer.android.com/about/dashboards/index.html" target="_blank">June 5,
+                    2017, developer.android </a>
             </section>
             <section>
                 <h3>Network and energy</h3>
@@ -146,14 +145,6 @@
             <section>
                 <h3>ART</h3>
                 <img data-src="images/android-opt.jpg" height="500px">
-            </section>
-            <section>
-                <h3>ART and JIT</h3>
-                <img data-src="images/art-jit.png" height="500px">
-            </section>
-            <section>
-                <h3>ART and the AOT</h3>
-                <img data-src="images/jit-idle.png" height="500px">
             </section>
         </section>
         <section>
@@ -400,7 +391,7 @@
             </section>
             <section>
                 <h3>Network call</h3>
-                <script src="https://gist.github.com/nicolasfavier/3d5ad53ebb198f2f3de88762da4239a2.js"></script>
+                <script src="https://gist.github.com/tommybuonomo/d899993a9e6c88984a72023c329cb6b6.js"></script>
             </section>
             <section data-background="#BBDEFB" data-background-transition="zoom">
                 <h3>Login on the server</h3>
@@ -835,12 +826,12 @@
                 <img data-src="images/facebook-iphone.jpeg" height="500px">
             </section>
             <section>
-              <h3>... mais de plus en plus proche !</h3>
-              <div class="fragment">
-                  <img data-src="images/spotify-android.png" height="500px">
+                <h3>... mais de plus en plus proche !</h3>
+                <div class="fragment">
+                    <img data-src="images/spotify-android.png" height="500px">
                   <span class="fragment">                  <img data-src="images/facebook-iphone.jpeg" height="500px">
 </span>
-              </div>
+                </div>
             </section>
             <section>
                 <h3>Check those links :</h3>
@@ -867,18 +858,21 @@
 <script src="js/reveal.js"></script>
 
 <script>
-			Reveal.initialize({
-				history: true,
+    Reveal.initialize({
+        history: true,
 
 
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
 
 
 </script>
